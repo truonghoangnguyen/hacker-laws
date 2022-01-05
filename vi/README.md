@@ -1,348 +1,346 @@
 # 💻📖 luật của hacker
 
-Laws, Theories, Principles and Patterns that developers will find useful.
+Các Luật, Lý thuyết, Nguyên tắc và Mẫu sẽ hữu ích cho các nhà phát triển phần mềm.
 
-[Translations](#translations): [🇮🇩](./translations/id.md) [🇧🇷](./translations/pt-BR.md) [🇨🇳](https://github.com/nusr/hacker-laws-zh) [🇩🇪](./translations/de.md) [🇫🇷](./translations/fr.md) [🇬🇷](./translations/el.md) [🇮🇹](https://github.com/csparpa/hacker-laws-it) [🇱🇻](./translations/lv.md) [🇰🇷](https://github.com/codeanddonuts/hacker-laws-kr) [🇷🇺](https://github.com/solarrust/hacker-laws) [🇪🇸](./translations/es-ES.md) [🇹🇷](https://github.com/umutphp/hacker-laws-tr) [🇯🇵](./translations/jp.md) [🇺🇦](./translations/uk.md)
+[Bản dịch](#translations) : [🇮🇩](./translations/id.md) [🇧🇷](./translations/pt-BR.md) [🇨🇳](https://github.com/nusr/hacker-laws-zh) [🇩🇪](./translations/de.md) [🇫🇷](./translations/fr.md) [🇬🇷](./translations/el.md) [🇮🇹](https://github.com/csparpa/hacker-laws-it) [🇱🇻](./translations/lv.md) [🇰🇷](https://github.com/codeanddonuts/hacker-laws-kr) [🇷🇺](https://github.com/solarrust/hacker-laws) [🇪🇸](./translations/es-ES.md) [🇹🇷](https://github.com/umutphp/hacker-laws-tr) [🇯🇵](./translations/jp.md) [🇺🇦](./translations/uk.md)
 
-Like this project? Please considering [sponsoring me](https://github.com/sponsors/dwmkerr) and the [translators](#translations). Also check out this podcast on [The Changelog - Laws for Hackers to Live By](https://changelog.com/podcast/403) to learn more about the project! You can also [download the latest PDF eBook](https://github.com/dwmkerr/hacker-laws/releases/latest/download/hacker-laws.pdf). Check the [Contributor Guide](./.github/contributing.md) if you are keen to contribute!
+Bạn thích dự án này? Vui lòng xem xét [tài trợ cho tôi](https://github.com/sponsors/dwmkerr) và các [dịch giả](#translations) . Ngoài ra, hãy xem podcast này trên [The Changelog - Luật để tin tặc tồn tại](https://changelog.com/podcast/403) để tìm hiểu thêm về dự án! Bạn cũng có thể [tải xuống sách điện tử PDF mới nhất](https://github.com/dwmkerr/hacker-laws/releases/latest/download/hacker-laws.pdf) . Hãy xem [Hướng dẫn dành cho cộng tác viên](./.github/contributing.md) nếu bạn muốn đóng góp!
 
 ---
 
 <!-- vim-markdown-toc GFM -->
 
-- [Introduction](#introduction)
-- [Laws](#laws)
-    - [90–9–1 Principle (1% Rule)](#9091-principle-1-rule)
-    - [Amdahl's Law](#amdahls-law)
-    - [The Broken Windows Theory](#the-broken-windows-theory)
-    - [Brooks' Law](#brooks-law)
-    - [CAP Theorem (Brewer's Theorem)](#cap-theorem-brewers-theorem)
-    - [Conway's Law](#conways-law)
-    - [Cunningham's Law](#cunninghams-law)
-    - [Dunbar's Number](#dunbars-number)
-    - [The Dunning-Kruger Effect](#the-dunning-kruger-effect)
-    - [Fitts' Law](#fitts-law)
-    - [Gall's Law](#galls-law)
-    - [Goodhart's Law](#goodharts-law)
+- [Giới thiệu](#introduction)
+- [Định luật](#laws)
+    - [Nguyên tắc 90–9–1 (Quy tắc 1%)](#9091-principle-1-rule)
+    - [Định luật Amdahl](#amdahls-law)
+    - [Lý thuyết cửa sổ vỡ](#the-broken-windows-theory)
+    - [Luật Brooks](#brooks-law)
+    - [Định lý CAP (Định lý Brewer)](#cap-theorem-brewers-theorem)
+    - [Định luật Conway](#conways-law)
+    - [Định luật Cunningham](#cunninghams-law)
+    - [Số Dunbar](#dunbars-number)
+    - [Hiệu ứng Dunning-Kruger](#the-dunning-kruger-effect)
+    - [Luật phù hợp](#fitts-law)
+    - [Luật Gall](#galls-law)
+    - [Luật Goodhart](#goodharts-law)
     - [Hanlon Razor](#hanlons-razor)
-    - [Hick's Law (Hick-Hyman Law)](#hicks-law-hick-hyman-law)
-    - [Hofstadter's Law](#hofstadters-law)
-    - [Hutber's Law](#hutbers-law)
-    - [The Hype Cycle &amp; Amara's Law](#the-hype-cycle--amaras-law)
-    - [Hyrum's Law (The Law of Implicit Interfaces)](#hyrums-law-the-law-of-implicit-interfaces)
-    - [Kernighan's Law](#kernighans-law)
-    - [Linus's Law](#linuss-law)
-    - [Metcalfe's Law](#metcalfes-law)
-    - [Moore's Law](#moores-law)
-    - [Murphy's Law / Sod's Law](#murphys-law--sods-law)
+    - [Luật Hick (Luật Hick-Hyman)](#hicks-law-hick-hyman-law)
+    - [Định luật Hofstadter](#hofstadters-law)
+    - [Định luật Hutber](#hutbers-law)
+    - [Chu kỳ Hype &amp; Định luật Amara](#the-hype-cycle--amaras-law)
+    - [Luật Hyrum (Luật của các giao diện ngầm)](#hyrums-law-the-law-of-implicit-interfaces)
+    - [Định luật Kernighan](#kernighans-law)
+    - [Luật Linus](#linuss-law)
+    - [Định luật Metcalfe](#metcalfes-law)
+    - [Định luật Moore](#moores-law)
+    - [Định luật Murphy / Định luật Sod](#murphys-law--sods-law)
     - [Dao cạo của Occam](#occams-razor)
-    - [Parkinson's Law](#parkinsons-law)
-    - [Premature Optimization Effect](#premature-optimization-effect)
-    - [Putt's Law](#putts-law)
-    - [Reed's Law](#reeds-law)
-    - [The Law of Conservation of Complexity (Tesler's Law)](#the-law-of-conservation-of-complexity-teslers-law)
-    - [The Law of Demeter](#the-law-of-demeter)
-    - [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
-    - [The Law of Triviality](#the-law-of-triviality)
-    - [The Unix Philosophy](#the-unix-philosophy)
-    - [The Scout Rule](#the-scout-rule)
-    - [The Spotify Model](#the-spotify-model)
-    - [The Two Pizza Rule](#the-two-pizza-rule)
-    - [Wadler's Law](#wadlers-law)
-    - [Wheaton's Law](#wheatons-law)
-- [Principles](#principles)
-    - [All Models Are Wrong (George Box's Law)](#all-models-are-wrong-george-boxs-law)
+    - [Định luật Parkinson](#parkinsons-law)
+    - [Hiệu ứng tối ưu hóa sớm](#premature-optimization-effect)
+    - [Định luật Putt](#putts-law)
+    - [Luật Reed](#reeds-law)
+    - [Định luật Bảo toàn Độ phức tạp (Định luật Tesler)](#the-law-of-conservation-of-complexity-teslers-law)
+    - [Định luật Demeter](#the-law-of-demeter)
+    - [Luật trừu tượng rò rỉ](#the-law-of-leaky-abstractions)
+    - [Luật tầm thường](#the-law-of-triviality)
+    - [Triết lý Unix](#the-unix-philosophy)
+    - [Quy tắc hướng đạo](#the-scout-rule)
+    - [Mô hình Spotify](#the-spotify-model)
+    - [Quy tắc hai chiếc bánh pizza](#the-two-pizza-rule)
+    - [Luật Wadler](#wadlers-law)
+    - [Định luật Wheaton](#wheatons-law)
+- [Nguyên tắc](#principles)
+    - [Tất cả các mô hình đều sai (Định luật George Box)](#all-models-are-wrong-george-boxs-law)
     - [Chesterton's Fence](#chestertons-fence)
-    - [The Dead Sea Effect](#the-dead-sea-effect)
-    - [The Dilbert Principle](#the-dilbert-principle)
-    - [The Pareto Principle (The 80/20 Rule)](#the-pareto-principle-the-8020-rule)
-    - [The Shirky Principle](#the-shirky-principle)
-    - [The Peter Principle](#the-peter-principle)
-    - [The Robustness Principle (Postel's Law)](#the-robustness-principle-postels-law)
+    - [Hiệu ứng Biển Chết](#the-dead-sea-effect)
+    - [Nguyên tắc Dilbert](#the-dilbert-principle)
+    - [Nguyên tắc Pareto (Quy tắc 80/20)](#the-pareto-principle-the-8020-rule)
+    - [Nguyên tắc Shirky](#the-shirky-principle)
+    - [Nguyên tắc Peter](#the-peter-principle)
+    - [Nguyên tắc Chắc chắn (Định luật Postel)](#the-robustness-principle-postels-law)
     - [CỨNG](#solid)
-    - [The Single Responsibility Principle](#the-single-responsibility-principle)
-    - [The Open/Closed Principle](#the-openclosed-principle)
-    - [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-    - [The Interface Segregation Principle](#the-interface-segregation-principle)
-    - [The Dependency Inversion Principle](#the-dependency-inversion-principle)
-    - [The DRY Principle](#the-dry-principle)
-    - [The KISS principle](#the-kiss-principle)
+    - [Nguyên tắc trách nhiệm duy nhất](#the-single-responsibility-principle)
+    - [Nguyên tắc Mở / Đóng](#the-openclosed-principle)
+    - [Nguyên tắc thay thế Liskov](#the-liskov-substitution-principle)
+    - [Nguyên tắc phân tách giao diện](#the-interface-segregation-principle)
+    - [Nguyên tắc đảo ngược phụ thuộc](#the-dependency-inversion-principle)
+    - [Nguyên tắc DRY](#the-dry-principle)
+    - [Nguyên tắc KISS](#the-kiss-principle)
     - [YAGNI](#yagni)
-    - [The Fallacies of Distributed Computing](#the-fallacies-of-distributed-computing)
-- [Reading List](#reading-list)
-- [Online Resources](#online-resources)
-- [PDF eBook](#pdf-ebook)
+    - [Sự sụp đổ của máy tính phân tán](#the-fallacies-of-distributed-computing)
+- [Danh sách đọc](#reading-list)
+- [Những nguồn thông tin trên mạng](#online-resources)
+- [Sách điện tử PDF](#pdf-ebook)
 - [Tệp âm thanh](#podcast)
-- [Translations](#translations)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [TODO](#todo)
+- [Bản dịch](#translations)
+- [Các dự án liên quan](#related-projects)
+- [Đóng góp](#contributing)
+- [SẼ LÀM](#todo)
 
 <!-- vim-markdown-toc -->
 
-## Introduction
+## Giới thiệu
 
-There are lots of laws which people discuss when talking about development. This repository is a reference and overview of some of the most common ones. Please share and submit PRs!
+Có rất nhiều luật mà mọi người thảo luận khi nói về phát triển phân mềm. Kho lưu trữ này là tài liệu tham khảo và tổng quan về một số kho lưu trữ phổ biến nhất. Hãy chia sẻ và gửi bài PR!
 
-❗: This repo contains an explanation of some laws, principles and patterns, but does not *advocate* for any of them. Whether they should be applied will always be a matter of debate, and greatly dependent on what you are working on.
+❗: Kho lưu trữ này chứa giải thích về một số luật, nguyên tắc và khuôn mẫu, nhưng không *ủng hộ* bất kỳ điều nào trong số đó. Liệu chúng có nên được áp dụng hay không sẽ luôn là vấn đề tranh luận và phụ thuộc rất nhiều vào những gì bạn đang làm.
 
-## Laws
+## Luật
 
-And here we go!
+Và chúng ta bắt đầu!
 
-### 90–9–1 Principle (1% Rule)
+### Nguyên tắc 90–9–1 (Quy tắc 1%)
 
-[1% Rule on Wikipedia](https://en.wikipedia.org/wiki/1%25_rule_(Internet_culture))
+[Quy tắc 1% trên Wikipedia](https://en.wikipedia.org/wiki/1%25_rule_(Internet_culture))
 
-The 90-9-1 principle suggests that within an internet community such as a wiki, 90% of participants only consume content, 9% edit or modify content and 1% of participants add content.
+Nguyên tắc 90-9-1 gợi ý rằng trong một cộng đồng internet như wiki, 90% người tham gia chỉ xem nội dung, 9% chỉnh sửa hoặc sửa đổi nội dung và 1% người tham gia thêm nội dung.
 
-Real-world examples:
+Ví dụ trong thế giới thực:
 
-- A 2014 study of four digital health social networks found the top 1% created 73% of posts, the next 9% accounted for an average of ~25% and the remaining 90% accounted for an average of 2% ([Reference](https://www.jmir.org/2014/2/e33/))
+- Một nghiên cứu năm 2014 trên bốn mạng xã hội về sức khỏe cho thấy 1% hàng đầu tạo ra 73% bài đăng, 9% tiếp theo chiếm trung bình ~ 25% và 90% còn lại chiếm trung bình 2% ( [Tham khảo](https://www.jmir.org/2014/2/e33/) )
 
-See Also:
+Xem thêm:
 
-- [Pareto principle](#the-pareto-principle-the-8020-rule)
+- [Nguyên tắc Pareto](#the-pareto-principle-the-8020-rule)
 
-### Amdahl's Law
+### Định luật Amdahl
 
-[Amdahl's Law on Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law)
+[Luật Amdahl trên Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law)
 
-> Amdahl's Law is a formula which shows the *potential speedup* of a computational task which can be achieved by increasing the resources of a system. Normally used in parallel computing, it can predict the actual benefit of increasing the number of processors, which is limited by the parallelisability of the program.
+> Định luật Amdahl là một công thức cho thấy *tốc độ tiềm năng* của một tác vụ tính toán có thể đạt được bằng cách tăng tài nguyên của một hệ thống. Thường được sử dụng trong tính toán song song, nó có thể dự đoán lợi ích thực tế của việc tăng số lượng bộ xử lý, điều này bị giới hạn bởi khả năng song song của chương trình.
 
-Best illustrated with an example. If a program is made up of two parts, part A, which must be executed by a single processor, and part B, which can be parallelised, then we see that adding multiple processors to the system executing the program can only have a limited benefit. It can potentially greatly improve the speed of part B - but the speed of part A will remain unchanged.
+Minh họa tốt nhất với một ví dụ. Nếu một chương trình có hai phần: phần A, phần này chỉ có thể thực hiện bằng một bộ xử lý đơn lẻ và phần B, có thể được thực hiện song song trên nhiều bộ xử lý, thì chúng ta thấy rằng việc thêm nhiều bộ xử lý vào hệ thống thực thi chương trình chỉ có thể có một lợi ích hạn chế. Nó có khả năng cải thiện đáng kể tốc độ của phần B - nhưng tốc độ của phần A sẽ không thay đổi.
 
-The diagram below shows some examples of potential improvements in speed:
+Sơ đồ dưới đây cho thấy một số ví dụ về những cải tiến tiềm năng về tốc độ:
 
-
-<img width="480px" alt="Diagram: Amdahl's Law" src="./images/amdahls_law.png">
+<img width="480px" src="./images/amdahls_law.png" alt="Diagram: Amdahl's Law">
 
 *(Tham khảo hình ảnh: Bởi Daniels219 tại Wikipedia tiếng Anh, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
 
-As can be seen, even a program which is 50% parallelisable will benefit very little beyond 10 processing units, whereas a program which is 95% parallelisable can still achieve significant speed improvements with over a thousand processing units.
+Như có thể thấy, ngay cả một chương trình có thể chạy song song 50% sẽ được hưởng lợi rất ít khi vượt quá 10 đơn vị xử lý, trong khi một chương trình có thể song song 95% vẫn có thể đạt được những cải thiện tốc độ đáng kể với hơn một nghìn đơn vị xử lý.
 
-As [Moore's Law](#moores-law) slows, and the acceleration of individual processor speed slows, parallelisation is key to improving performance. Graphics programming is an excellent example - with modern Shader based computing, individual pixels or fragments can be rendered in parallel - this is why modern graphics cards often have many thousands of processing cores (GPUs or Shader Units).
+Như [Định luật Moore](#moores-law) chậm, và tốc độ tăng tốc của bộ xử lý đơn lẻ chậm lại, thì song song hóa là chìa khóa để cải thiện hiệu suất. Ví dụ như lập trình đồ họa - với tính toán dựa trên Shader hiện đại, các pixel hoặc mảnh riêng lẻ có thể được hiển thị song song - đây là lý do tại sao các card đồ họa hiện đại thường có hàng nghìn lõi xử lý (GPU hoặc Shader Units).
 
-See also:
+Xem thêm:
 
-- [Brooks' Law](#brooks-law)
-- [Moore's Law](#moores-law)
+- [Luật Brooks](#brooks-law)
+- [định luật Moore](#moores-law)
 
-### The Broken Windows Theory
+### Lý thuyết cửa sổ vỡ
 
-[The Broken Windows Theory on Wikipedia](https://en.wikipedia.org/wiki/Broken_windows_theory)
+[Lý thuyết cửa sổ vỡ trên Wikipedia](https://en.wikipedia.org/wiki/Broken_windows_theory)
 
-The Broken Windows Theory suggests that visible signs of crime (or lack of care of an environment) lead to further and more serious crimes (or further deterioration of the environment).
+Lý thuyết Cửa sổ Vỡ cho thấy rằng các dấu hiệu tội phạm có thể nhìn thấy (cửa sổ kính bị vỡ) dẫn đến tội phạm ngày càng nghiêm trọng hơn (hoặc làm suy thoái môi trường hơn nữa).
 
-This theory has been applied to software development, suggesting that poor quality code (or [Technical Debt](#TODO)) can lead to a perception that efforts to improve quality may be ignored or undervalued, thus leading to further poor quality code. This effect cascades leading to a great decrease in quality over time.
+Lý thuyết này đã được áp dụng cho phát triển phần mềm, cho thấy rằng mã chất lượng kém (hoặc [Nợ kỹ thuật](#TODO) ) có thể dẫn đến nhận thức rằng các nỗ lực cải thiện chất lượng có thể bị bỏ qua hoặc định giá thấp, do đó dẫn đến mã chất lượng kém hơn. Hiệu ứng này giảm dần dẫn đến chất lượng giảm mạnh theo thời gian.
 
-See also:
+Xem thêm:
 
 - [Technical Debt](#TODO)
 
-Examples:
+Ví dụ:
 
 - [Lập trình thực dụng: Phần mềm Entropy](https://flylib.com/books/en/1.315.1.15/1/)
 - [Kinh dị mã hóa: Lý thuyết cửa sổ bị hỏng](https://blog.codinghorror.com/the-broken-window-theory/)
 - [OpenSource: Niềm vui của Lập trình - Lý thuyết Cửa sổ Vỡ](https://opensourceforu.com/2011/05/joy-of-programming-broken-window-theory/)
 
-### Brooks' Law
+### Luật Brooks
 
-[Brooks' Law on Wikipedia](https://en.wikipedia.org/wiki/Brooks%27s_law)
+[Luật Brooks trên Wikipedia](https://en.wikipedia.org/wiki/Brooks%27s_law)
 
-> Adding human resources to a late software development project makes it later.
+> Thêm nhân lực vào một dự án phát triển phần mềm bị chậm tiến độ sẽ làm nó chậm hơn.
 
-This law suggests that in many cases, attempting to accelerate the delivery of a project which is already late, by adding more people, will make the delivery even later. Brooks is clear that this is an over-simplification, however, the general reasoning is that given the ramp up time of new resources and the communication overheads, in the immediate short-term velocity decreases. Also, many tasks may not be divisible, i.e. easily distributed between more resources, meaning the potential velocity increase is also lower.
+Luật này cho thấy rằng trong nhiều trường hợp, việc cố gắng đẩy nhanh tiến độ giao một dự án vốn đã bị chậm, bằng cách bổ sung thêm người, sẽ khiến việc giao dự án chậm hơn. Brooks rõ ràng rằng đây là một sự đơn giản hóa quá mức, tuy nhiên, lý do chung là với thời gian gia tăng của các nguồn tài nguyên mới và tổng chi phí liên lạc, tốc độ ngắn hạn tức thời sẽ giảm xuống. Ngoài ra, nhiều nhiệm vụ có thể không chia nhỏ được hơn nữa (chia nhỏ công việc là phân phối công việc ra các nguồn lực để xử lý) dẫn đến tốc độ tăng tiềm năng cũng thấp hơn.
 
-The common phrase in delivery "Nine women can't make a baby in one month" relates to Brooks' Law, in particular, the fact that some kinds of work are not divisible or parallelisable.
+Cụm từ phổ biến trong giao hàng "Chín phụ nữ không thể sinh con trong một tháng" liên quan đến Luật Brooks, đặc biệt, thực tế là một số loại công việc không thể phân chia hoặc song song.
 
-This is a central theme of the book '[The Mythical Man Month](#reading-list)'.
+Đây là chủ đề trung tâm của cuốn sách ' [The Mythical Man Month](#reading-list) '.
 
-See also:
+Xem thêm:
 
 - [Thần chết xuất hiện](#todo)
 - [Danh sách đọc: Tháng người đàn ông thần thoại](#reading-list)
 
-### CAP Theorem (Brewer's Theorem)
+### Định lý CAP (Định lý Brewer)
 
-The CAP Theorem (defined by Eric Brewer) states that for a distributed data store only two out of the following three guarantees (at most) can be made:
+Định lý CAP (do Eric Brewer định nghĩa) tuyên bố rằng đối với một kho lưu trữ dữ liệu phân tán, chỉ có thể thực hiện hai trong ba bảo đảm sau (nhiều nhất):
 
-- Consistency: when reading data, every request receives the *most recent* data or an error is returned
-- Availability: when reading data, every request receives *a non error response*, without the guarantee that it is the *most recent* data
-- Partition Tolerance: when an arbitrary number of network requests between nodes fail, the system continues to operate as expected
+- Tính đồng bộ (Consistency): khi đọc dữ liệu, mọi yêu cầu đều nhận được *dữ liệu gần đây nhất* hoặc lỗi được trả về
+- Tính sẫn sàng (Availability): khi đọc dữ liệu, mọi yêu cầu đều nhận được *phản hồi không lỗi* , mà không cần đảm bảo rằng đó là dữ liệu *mới nhất*
+- Chịu lỗi(P-Partition Tolerance): khi một số lượng tùy ý yêu cầu mạng giữa các nút không thành công, hệ thống tiếp tục hoạt động như thiết kế.
 
-The core of the reasoning is as follows. It is impossible to guarantee that a network partition will not occur (see [The Fallacies of Distributed Computing](#the-fallacies-of-distributed-computing)). Therefore in the case of a partition we can either cancel the operation (increasing consistency and decreasing availability) or proceed (increasing availability but decreasing consistency).
+Cốt lõi của lý do là như sau. Không thể đảm bảo sai biệt cục bộ không xảy ra (xem [Sự sụp đổ của Máy tính Phân tán](#the-fallacies-of-distributed-computing) ). Do đó, trong trường hợp sai biệt cục bộ, chúng ta có thể hoặc ngưng công việc (tăng tính đồng bộ và giảm tính sẫn sàng) hoặc tiếp tục công việc (tăng tính sẫn sàng nhưng giảm tính đồng bộ).
 
-The name comes from the first letters of the guarantees (Consistency, Availability, Partition Tolerance). Note that it is very important to be aware that this does *not* relate to [*ACID*](#TODO), which has a different definition of consistency. More recently, [PACELC](#TODO) theorem has been developed which adds constraints for latency and consistency when the network is *not* partitioned (i.e. when the system is operating as expected).
+Tên gọi xuất phát từ các chữ cái đầu tiên (Consistency, Availability, Partition Tolerance). Lưu ý rằng điều rất quan trọng cần lưu ý là điều này *không* liên quan đến [*ACID*](#TODO) , có định nghĩa khác về tính đồng bộ. Gần đây hơn, [định lý PACELC](#TODO) đã được phát triển để bổ sung các ràng buộc về độ trễ và tính đồng bộ khi mạng *không bị* sai biệt cục bộ (tức là khi hệ thống đang hoạt động như mong đợi).
 
-Most modern database platforms acknowledge this theorem implicitly by offering the user of the database the option to choose between whether they want a highly available operation (which might include a 'dirty read') or a highly consistent operation (for example a 'quorum acknowledged write').
+Hầu hết các nền tảng cơ sở dữ liệu hiện đại đều thừa nhận định lý này một cách ngầm định bằng cách cung cấp cho người dùng cơ sở dữ liệu tùy chọn để lựa chọn giữa việc họ muốn một hoạt động có tính khả dụng cao (có thể bao gồm 'đọc bẩn') hay một hoạt động nhất quán cao (ví dụ: một 'số đại biểu được thừa nhận ghi ').
 
-Real world examples:
+Ví dụ trong thế giới thực:
 
-- [Inside Google Cloud Spanner and the CAP Theorem](https://cloud.google.com/blog/products/gcp/inside-cloud-spanner-and-the-cap-theorem) - Goes into the details of how Cloud Spanner works, which appears at first to seem like a platform which has *all* of the guarantees of CAP, but under the hood is essentially a CP system.
+- [Bên trong Google Cloud Spanner và Định lý CAP](https://cloud.google.com/blog/products/gcp/inside-cloud-spanner-and-the-cap-theorem) - Đi vào chi tiết về cách hoạt động của Cloud Spanner, thoạt đầu có vẻ giống như một nền tảng có *tất cả* các đảm bảo của CAP, nhưng bên dưới cơ bản là một hệ thống CP.
 
-See also:
+Xem thêm:
 
 - [AXIT](#TODO)
 - [Sự sụp đổ của máy tính phân tán](#the-fallacies-of-distributed-computing)
 - [PACELC](#TODO)
 
-### Conway's Law
+### Định luật Conway
 
-[Conway's Law on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_law)
+[Luật Conway trên Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_law)
 
-This law suggests that the technical boundaries of a system will reflect the structure of the organisation. It is commonly referred to when looking at organisation improvements, Conway's Law suggests that if an organisation is structured into many small, disconnected units, the software it produces will be. If an organisation is built more around 'verticals' which are orientated around features or services, the software systems will also reflect this.
+Luật này gợi ý rằng các biên giới kỹ thuật của một hệ thống sẽ phản ánh cấu trúc của tổ chức. Nó thường được nhắc đến khi xem xét các cải tiến của tổ chức, Luật Conway gợi ý rằng nếu một tổ chức được cấu trúc thành nhiều đơn vị nhỏ, không kết nối thì phần mềm mà nó tạo ra sẽ là như vậy. Nếu một tổ chức được xây dựng nhiều hơn xung quanh 'ngành dọc' được định hướng xung quanh các tính năng hoặc dịch vụ, hệ thống phần mềm cũng sẽ phản ánh điều này.
 
-See also:
+Xem thêm:
 
 - [Mô hình Spotify](#the-spotify-model)
 
-### Cunningham's Law
+### Định luật Cunningham
 
 [Định luật Cunningham trên Wikipedia](https://en.wikipedia.org/wiki/Ward_Cunningham#Cunningham's_Law)
 
-> The best way to get the right answer on the Internet is not to ask a question, it's to post the wrong answer.
+> Cách tốt nhất để có câu trả lời đúng trên Internet không phải là đặt câu hỏi, mà là hẫy đăng câu trả lời sai.
 
-According to Steven McGeady, Ward Cunningham advised him in the early 1980s: "The best way to get the right answer on the Internet is not to ask a question, it's to post the wrong answer." McGeady dubbed this Cunningham's law, though Cunningham denies ownership calling it a "misquote." Although originally referring to interactions on Usenet, the law has been used to describe how other online communities work (e.g., Wikipedia, Reddit, Twitter, Facebook).
+Theo Steven McGeady, Ward Cunningham đã khuyên anh ta vào đầu những năm 1980: "Cách tốt nhất để có câu trả lời đúng trên Internet không phải là đặt một câu hỏi, mà là hẫy đăng câu trả lời sai." McGeady gọi đây là định luật Cunningham, mặc dù Cunningham phủ nhận quyền sở hữu gọi nó là "trích dẫn sai". Mặc dù ban đầu đề cập đến các tương tác trên Usenet, luật đã được sử dụng để mô tả cách hoạt động của các cộng đồng trực tuyến khác (ví dụ: Wikipedia, Reddit, Twitter, Facebook).
 
-See also:
+Xem thêm:
 
 - [XKCD 386: "Cuộc gọi nghĩa vụ"](https://xkcd.com/386/)
 
-### Dunbar's Number
+### Số Dunbar
 
-[Dunbar's Number on Wikipedia](https://en.wikipedia.org/wiki/Dunbar%27s_number)
+[Số Dunbar trên Wikipedia](https://en.wikipedia.org/wiki/Dunbar%27s_number)
 
-"Dunbar's number is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships— relationships in which an individual knows who each person is and how each person relates to every other person." There is some disagreement to the exact number. "... [Dunbar] proposed that humans can comfortably maintain only 150 stable relationships." He put the number into a more social context, "the number of people you would not feel embarrassed about joining uninvited for a drink if you happened to bump into them in a bar." Estimates for the number generally lay between 100 and 250.
+"Con số của Dunbar là một giới hạn nhận thức được đề xuất cho số người mà một người có thể duy trì các mối quan hệ xã hội ổn định - các mối quan hệ trong đó một cá nhân biết mỗi người là ai và mối quan hệ của mỗi người với mọi người khác như thế nào." Không có một con số chính xác. "... [Dunbar] đề xuất rằng con người chỉ có thể thoải mái duy trì 150 mối quan hệ ổn định." Ông đặt con số vào một bối cảnh xã hội hơn, "số lượng người mà bạn sẽ không cảm thấy xấu hổ khi tham gia một cuộc uống không được mời nếu bạn tình cờ gặp họ trong một quán bar." Các ước tính cho con số thường nằm trong khoảng từ 100 đến 250.
 
-Like stable relationships between individuals, a developer's relationship with a codebase takes effort to maintain. When faced with large complicated projects, or ownership of many projects we lean on convention, policy, and modeled procedure to scale. Dunbar's number is not only important to keep in mind as an office grows, but also when setting the scope for team efforts or deciding when a system should invest in tooling to assist in modeling and automating logistical overhead. Putting the number into an engineering context, it is the number of projects (or normalized complexity of a single project) for which you would feel confident in joining an on-call rotation to support.
+Giống như mối quan hệ ổn định giữa các cá nhân, mối quan hệ của nhà phát triển với cơ sở mã cần nỗ lực để duy trì. Khi đối mặt với các dự án lớn phức tạp, hoặc sở hữu nhiều dự án, chúng tôi dựa trên quy ước, chính sách và quy trình được mô hình hóa để mở rộng quy mô. Con số của Dunbar không chỉ quan trọng cần ghi nhớ khi văn phòng phát triển mà còn khi thiết lập phạm vi cho các nỗ lực của nhóm hoặc quyết định khi nào một hệ thống nên đầu tư vào công cụ để hỗ trợ mô hình hóa và tự động hóa chi phí hậu cần. Đặt con số vào bối cảnh kỹ thuật, đó là số lượng dự án (hoặc độ phức tạp được chuẩn hóa của một dự án) mà bạn cảm thấy tự tin khi tham gia vòng quay theo cuộc gọi để hỗ trợ.
 
-See also:
+Xem thêm:
 
-- [Conway's Law](#conways-law)
+- [Định luật Conway](#conways-law)
 
-### The Dunning-Kruger Effect
+### Hiệu ứng Dunning-Kruger
 
-[The Dunning-Kruger Effect on Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+[Hiệu ứng Dunning-Kruger trên Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
-> If you're incompetent, you can't know you're incompetent... The skills you need to produce a right answer are exactly the skills you need to recognize what a right answer is.
+> Nếu bạn không đủ năng lực, bạn không thể biết mình kém cỏi ... Kỹ năng cần để đưa ra một câu trả lời đúng, chính là kỹ năng cần để nhận ra một câu trả lời đúng.
 >
 > ( [David Dunning](https://en.wikipedia.org/wiki/David_Dunning) )
 
-The Dunning–Kruger effect is a theoretical cognitive bias which was described by David Dunning and Justin Kruger in a 1999 psychological study and paper. The study suggests that people with a low level of ability at a task are likely to overestimate their ability of the task. The proposed reason for this bias is that a sufficient *awareness* of the complexity of a problem or domain is required for a person to be able to make an informed opinion of their capability to work in that domain.
+Hiệu ứng Dunning-Kruger là một khuynh hướng nhận thức lý thuyết được David Dunning và Justin Kruger mô tả trong một bài báo và nghiên cứu tâm lý năm 1999. Nghiên cứu cho thấy rằng những người có mức năng lực thấp trong một nhiệm vụ có khả năng đánh giá quá cao khả năng của họ trong nhiệm vụ. Lý do được đề xuất cho sự thiên vị này là một người cần có *nhận thức* đầy đủ về mức độ phức tạp của một vấn đề hoặc lĩnh vực để có thể đưa ra ý kiến sáng suốt về khả năng làm việc của họ trong lĩnh vực đó.
 
-The Dunning-Kruger effect has sometimes been used to describe a related, but not necessarily implied effect which could be described as "The less a person understands a domain, the more they are likely to believe they can easily solve problems in that domain, as they are more likely to see the domain as *simple*". This more general effect is highly relevant in technology. It would suggest that people who are less familiar with a domain, such as non-technical team members or less experienced team members, are more likely to *underestimate* the effort required to solve a problem in this space.
+Hiệu ứng Dunning-Kruger đôi khi được sử dụng để mô tả một hiệu ứng có liên quan, nhưng không nhất thiết ngụ ý mà có thể được mô tả là "Một người càng ít hiểu về một vấn đề, họ càng tin rằng họ có thể dễ dàng giải quyết các vấn đề đó, như họ có nhiều khả năng thấy miền là *đơn giản* ". Hiệu ứng tổng quát hơn này rất phù hợp trong công nghệ. Nó sẽ gợi ý rằng những người ít quen thuộc với một vấn đề, chẳng hạn như thành viên nhóm không chuyên về kỹ thuật hoặc thành viên nhóm ít kinh nghiệm, có nhiều khả năng *đánh giá thấp* nỗ lực cần thiết để giải quyết một vấn đề trong không gian này.
 
-As a person's understanding and experience in a domain grows, they may well encounter another effect, which is that they tend to *overestimate* the ability of *others* or *underestimate* their own ability, as they are have become so experienced in the domain. In all cases these effects are *cognitive biases*. As with any bias, an understanding that it may be present will often be sufficient to help avoid the challenges - as when there is awareness of a bias more inputs and opinions can be included to attempt to eliminate these biases. A closely related is the bias of [Illusory superiority](https://en.wikipedia.org/wiki/Illusory_superiority).
+Khi sự hiểu biết và kinh nghiệm của một người trong một lĩnh vực tăng lên, họ cũng có thể gặp phải một tác động khác, đó là họ có xu hướng *đánh giá quá cao* khả năng của *người khác* hoặc *đánh giá thấp* khả năng của chính họ, vì họ đã trở nên có kinh nghiệm trong lĩnh vực đó. Trong mọi trường hợp, những tác động này là *thành kiến về nhận thức* . Như với bất kỳ sự thiên vị nào, sự hiểu biết rằng nó có thể có thường sẽ đủ để giúp tránh những thách thức - vì khi có nhận thức về sự thiên vị, nhiều đầu vào và ý kiến hơn có thể được đưa vào để cố gắng loại bỏ những thành kiến này. Một liên quan mật thiết là sự thiên vị về [ưu thế](https://en.wikipedia.org/wiki/Illusory_superiority) của Huyễn Ảnh.
 
-Real-world examples:
+Ví dụ trong thế giới thực:
 
-- [Apple vs. FBI: Why This Anti-Terror Hawk Switched Sides](https://fortune.com/2016/03/10/apple-fbi-lindsay-graham/) - In 2016 Senator Lindsey Graham changed his stance on Apple creating a 'backdoor' in their encryption of devices. Initially Graham had been critical of Apple challenging a request to create a 'backdoor', which he saw as necessary to investigate potential terrorist plots. However, by Graham's own admission, as he learned more about the technical complexity of the domain, he realised that he had assumed it to be far more simple than he had realised, and that such a backdoor could have serious negative consequences. This could potentially be considered an example of the Dunning-Kruger effect - a cyber-security expert would likely understand immediately how such a backdoor could be exploited, as they have deep understanding of the domain, a layperson might assume that phone security is more similar to *physical security* where the practice of having a 'master key' for law enforcement is possible, but this analogy does not apply sufficiently well to describe modern encryption in cyber-security.
+- [Apple vs. FBI: Tại sao Diều hâu chống khủng bố này lại chuyển hướng](https://fortune.com/2016/03/10/apple-fbi-lindsay-graham/) - Năm 2016, Thượng nghị sĩ Lindsey Graham đã thay đổi lập trường của mình về việc Apple tạo ra một 'cửa sau' trong mã hóa thiết bị của họ. Ban đầu, Graham đã chỉ trích Apple thách thức yêu cầu tạo một 'cửa sau', mà ông cho là cần thiết để điều tra các âm mưu khủng bố tiềm ẩn. Tuy nhiên, nhờ sự thừa nhận của chính Graham, khi anh ấy hiểu thêm về độ phức tạp kỹ thuật của miền, anh ấy nhận ra rằng anh ấy đã cho rằng nó đơn giản hơn nhiều so với những gì anh ấy đã nhận ra và rằng một cửa hậu như vậy có thể gây ra những hậu quả tiêu cực nghiêm trọng. Đây có thể được coi là một ví dụ về hiệu ứng Dunning-Kruger - một chuyên gia an ninh mạng có thể sẽ hiểu ngay lập tức về cách một cửa hậu như vậy có thể bị khai thác, vì họ có hiểu biết sâu sắc về miền, một người dân có thể cho rằng bảo mật điện thoại tương tự hơn đối với *bảo mật vật lý* khi có thể thực hiện được 'khóa chính' để thực thi pháp luật, nhưng sự tương tự này không áp dụng đủ tốt để mô tả mã hóa hiện đại trong an ninh mạng.
 
-### Fitts' Law
+### Luật Fitts'
 
 [Luật phù hợp với Wikipedia](https://en.wikipedia.org/wiki/Fitts%27s_law)
 
-Fitts' law predicts that the time required to move to a target area is a function of the distance to the target divided by the width of the target.
+Định luật Fitts dự đoán rằng thời gian cần thiết để di chuyển đến một khu vực mục tiêu là một hàm của khoảng cách đến mục tiêu chia cho chiều rộng của mục tiêu.
 
-
-<img width="300px" alt="Diagram: Fitts Law" src="./images/Fitts_Law.svg">
+<img width="300px" src="./images/Fitts_Law.svg" alt="Diagram: Fitts Law">
 
 *(Tham khảo hình ảnh: Bởi Foobar628 tại Wikipedia tiếng Anh, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/Fitts%27s_law#/media/File:Fitts_Law.svg)*
 
-The consequences of this law dictate that when designing UX or UI, interactive elements should be as large as possible and the distance between the users attention area and interactive element should be as small as possible. This has consequences on design, such as grouping tasks that are commonly used with one another close.
+Hệ quả của luật này quy định rằng khi thiết kế UX hoặc UI, các phần tử tương tác phải càng lớn càng tốt và khoảng cách giữa vùng chú ý của người dùng và phần tử tương tác phải càng nhỏ càng tốt. Điều này có hậu quả về thiết kế, chẳng hạn như nhóm các nhiệm vụ thường được sử dụng với nhau.
 
-It also formalises the concept of 'magic corners', the corners of the screen to which a user can 'sweep' their mouse to easily hit - which is where key UI elements can be placed. The Windows Start button is in a magic corner, making it easy to select, and as an interesting contrast, the MacOS 'close window' button is *not* in a magic corner, making it hard to hit by mistake.
+Nó cũng chính thức hóa khái niệm 'góc ma thuật', các góc của màn hình mà người dùng có thể 'quét' chuột của họ để dễ dàng nhấn - đó là nơi có thể đặt các phần tử giao diện người dùng chính. Nút Start của Windows nằm ở một góc kỳ diệu, giúp bạn dễ dàng lựa chọn và như một sự tương phản thú vị, nút 'đóng cửa sổ' của MacOS *không* nằm ở một góc ma thuật, nên khó có thể nhấn nhầm.
 
-See also:
+Xem thêm:
 
 - [Năng lực thông tin của hệ thống vận động của con người trong việc điều khiển biên độ vận động.](https://www.semanticscholar.org/paper/The-information-capacity-of-the-human-motor-system-Fitts/634c9fde5f1c411e4487658ac738dcf18d98ea8d)
 
-### Gall's Law
+### Luật Gall
 
-[Gall's Law on Wikipedia](https://en.wikipedia.org/wiki/John_Gall_(author)#Gall's_law)
+[Luật Gall trên Wikipedia](https://en.wikipedia.org/wiki/John_Gall_(author)#Gall's_law)
 
-> A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
+> Một hệ thống phức tạp luôn luôn được phát hiện là đã được phát triển từ một hệ thống đơn giản đã hoạt động. Một hệ thống phức tạp được thiết kế từ đầu không bao giờ hoạt động và không thể được vá để làm cho nó hoạt động. Bạn phải bắt đầu lại với một hệ thống hoạt động đơn giản.
 >
 > ( [John Gall](https://en.wikipedia.org/wiki/John_Gall_(author)) )
 
-Gall's Law implies that attempts to *design* highly complex systems are likely to fail. Highly complex systems are rarely built in one go, but evolve instead from more simple systems.
+Định luật Gall ngụ ý rằng những nỗ lực *thiết kế* các hệ thống phức tạp có khả năng thất bại cao. Các hệ thống phức tạp cao hiếm khi được xây dựng trong một lần, mà thực tế là phát triển từ các hệ thống đơn giản hơn.
 
-The classic example is the world-wide-web. In its current state, it is a highly complex system. However, it was defined initially as a simple way to share content between academic institutions. It was very successful in meeting these goals and evolved to become more complex over time.
+Ví dụ cổ điển là world-wide-web. Ở trạng thái hiện tại, nó là một hệ thống rất phức tạp. Tuy nhiên, ban đầu nó được định nghĩa là một cách đơn giản để chia sẻ nội dung giữa các tổ chức học thuật. Nó đã rất thành công trong việc đáp ứng những mục tiêu này và ngày càng phát triển trở nên phức tạp hơn theo thời gian.
 
-See also:
+Xem thêm:
 
 - [KISS (Giữ nó đơn giản, ngu ngốc)](#the-kiss-principle)
 
-### Goodhart's Law
+### Luật Goodhart
 
-[The Goodhart's Law on Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
+[Định luật Goodhart trên Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
 
-> Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.
+> Mọi thống kê đều đặn quan sát được sẽ có xu hướng sụp đổ khi chịu áp lực đặt lên nó với mục đích kiểm soát.
 >
 > *Charles Goodhart*
 
-Also commonly referenced as:
+Cũng thường được gọi là:
 
-> When a measure becomes a target, it ceases to be a good measure.
+> Khi đo lường trở thành mục tiêu, nó không còn là một đo lường tốt.
 >
 > *Marilyn Strathern*
 
-The law states that the measure-driven optimizations could lead to devaluation of the measurement outcome itself. Overly selective set of measures ([KPIs](https://en.wikipedia.org/wiki/Performance_indicator)) blindly applied to a process results in distorted effect. People tend to optimize locally by "gaming" the system in order to satisfy particular metrics instead of paying attention to holistic outcome of their actions.
+Luật nói rằng các tối ưu hóa theo hướng đo lường, có thể dẫn đến việc giảm giá trị của chính kết quả đo lường. Việc áp dụng một cách mù quáng các bộ đo lường ( [KPI](https://en.wikipedia.org/wiki/Performance_indicator) ) cho một quy trình dẫn đến hiệu quả bị bóp méo. Mọi người có xu hướng tối ưu hóa cục bộ bằng cách "chơi" hệ thống để đáp ứng các chỉ số cụ thể, thay vì chú ý đến kết quả tổng thể của các hành động của họ.
 
-Real-world examples:
+Ví dụ trong thế giới thực:
 
-- Assert-free tests satisfy the code coverage expectation, despite the fact that the metric intent was to create well-tested software.
-- Developer performance score indicated by the number of lines committed leads to unjustifiably bloated codebase.
+- Các bài kiểm tra không có xác nhận đáp ứng kỳ vọng về độ bao phủ của mã, mặc dù thực tế là mục đích của số liệu là tạo ra phần mềm được kiểm tra tốt.
+- Khi điểm hiệu suất của nhà phát triển được tính bằng số dòng lệnh được cam kết, sẽ dẫn đến số dòng lệnh bị phình ra một cách vô cớ.
 
-See also:
+Xem thêm:
 
 - [Luật Goodhart: Cách đo lường những điều sai trái thúc đẩy hành vi trái đạo đức](https://coffeeandjunk.com/goodharts-campbells-law/)
 - [Dilbert trên phần mềm không có lỗi](https://dilbert.com/strip/1995-11-13)
 
 ### Hanlon Razor
 
-[Hanlon's Razor on Wikipedia](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
+[Hanlon Razor trên Wikipedia](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
 
-> Never attribute to malice that which is adequately explained by stupidity.
+> Kết quả xấu không thể giải thích được bằng sự thực hiện ác, mà bằng sự ngu dốt
 >
 > Robert J. Hanlon
 
-This principle suggests that actions resulting in a negative outcome were not a result of ill will. Instead the negative outcome is more likely attributed to those actions and/or the impact being not fully understood.
+Nguyên tắc này gợi ý rằng những hành động dẫn đến một kết quả xấu không phải là do ý chí xấu. Thay vào đó, kết quả xấu có nhiều khả năng là do những hành động hoặc tác động không được hiểu một cách đầy đủ.
 
-### Hick's Law (Hick-Hyman Law)
+### Luật Hick (Luật Hick-Hyman)
 
-[Hick's law on Wikipedia](https://en.wikipedia.org/wiki/Hick%27s_law)
+[Luật Hick trên Wikipedia](https://en.wikipedia.org/wiki/Hick%27s_law)
 
-> Decision time grows logarithmically with the number of options you can choose from.
+> Thời gian quyết định tăng theo logarit với số lượng tùy chọn bạn có thể chọn.
 >
 > William Edmund Hick và Ray Hyman
 
-In the equation below, `T` is the time to make a decision, `n` is the number of options, and `b` is a constant which is determined by analysis of the data.
+Trong phương trình dưới đây, `T` là thời gian để đưa ra quyết định, `n` là số lựa chọn và `b` là hằng số được xác định bằng phân tích dữ liệu.
 
 ![Luật Hicks](./images/hicks_law.svg)
 
 *(Hình ảnh tham khảo: Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/Hick%27s_law)*
 
-This law only applies when the number of options is *ordered*, for example, alphabetically. This is implied in the base two logarithm - which implies the decision maker is essentially performing a *binary search*. If the options are not well ordered, experiments show the time taken is linear.
+Luật này chỉ áp dụng khi số lượng tùy chọn được *sắp xếp* , ví dụ, theo thứ tự bảng chữ cái. Điều này được ngụ ý trong lôgarit cơ số hai - ngụ ý người ra quyết định về cơ bản đang thực hiện *tìm kiếm nhị phân* . Nếu các tùy chọn không được sắp xếp hợp lý, các thử nghiệm cho thấy thời gian thực hiện là tuyến tính.
 
-This is has significant impact in UI design; ensuring that users can easily search through options leads to faster decision making.
+Điều này có tác động đáng kể trong thiết kế giao diện người dùng; đảm bảo rằng người dùng có thể dễ dàng tìm kiếm thông qua các tùy chọn dẫn đến việc ra quyết định nhanh hơn.
 
-A correlation has also been shown in Hick's Law between IQ and reaction time as shown in [Speed of Information Processing: Developmental Change and Links to Intelligence](https://www.sciencedirect.com/science/article/pii/S0022440599000369).
+Một mối tương quan cũng đã được chỉ ra trong Định luật Hick giữa chỉ số IQ và thời gian phản ứng như được thể hiện trong [Tốc độ xử lý thông tin: Thay đổi phát triển và liên kết với trí thông minh](https://www.sciencedirect.com/science/article/pii/S0022440599000369) .
 
-See also:
+Xem thêm:
 
 - [Luật Fitts](#fitts-law)
 
-### Hofstadter's Law
+### Định luật Hofstadter
 
 [Hofstadter's Law on Wikipedia](https://en.wikipedia.org/wiki/Hofstadter%27s_law)
 
-> It always takes longer than you expect, even when you take into account Hofstadter's Law.
+> Nó luôn mất nhiều thời gian hơn bạn dự tính, ngay cả khi bạn tính đến Định luật Hofstadter.
 >
 > (Douglas Hofstadter)
 
-You might hear this law referred to when looking at estimates for how long something will take. It seems a truism in software development that we tend to not be very good at accurately estimating how long something will take to deliver.
+Bạn có thể nghe thấy luật này được đề cập đến khi xem xét các ước tính về thời gian. Có vẻ như một sự sai lầm trong phát triển phần mềm là chúng ta có xu hướng không giỏi trong việc ước tính chính xác thời gian một thứ gì đó sẽ được phân phối.
 
 Đây là từ cuốn sách ' [Gödel, Escher, Bach: Một bím tóc vàng vĩnh cửu](#reading-list) '.
 
@@ -350,279 +348,279 @@ Xem thêm:
 
 - [Danh sách đọc: Gödel, Escher, Bach: Một bím tóc vàng vĩnh cửu](#reading-list)
 
-### Hutber's Law
+### Định luật Hutber
 
 [Luật Hutber trên Wikipedia](https://en.wikipedia.org/wiki/Hutber%27s_law)
 
-> Improvement means deterioration.
+> Cải tiến nghĩa là xấu đi.
 >
 > ( [Patrick Hutber](https://en.wikipedia.org/wiki/Patrick_Hutber) )
 
-This law suggests that improvements to a system will lead to deterioration in other parts, or it will hide other deterioration, leading overall to a degradation from the current state of the system.
+Luật này gợi ý rằng những cải tiến đối với một hệ thống sẽ dẫn đến sự hư hỏng ở các bộ phận khác, hoặc nó sẽ che giấu sự hư hỏng khác, dẫn đến sự suy thoái về tổng thể so với trạng thái hiện tại của hệ thống.
 
-For example, a decrease in response latency for a particular end-point could cause increased throughput and capacity issues further along in a request flow, affecting an entirely different sub-system.
+Ví dụ: giảm độ trễ phản hồi cho một điểm cuối cụ thể có thể gây ra các vấn đề về thông lượng và dung lượng tăng thêm trong luồng yêu cầu, ảnh hưởng đến một hệ thống con hoàn toàn khác.
 
-### The Hype Cycle &amp; Amara's Law
+### Chu kỳ Hype &amp; Định luật Amara
 
-[The Hype Cycle on Wikipedia](https://en.wikipedia.org/wiki/Hype_cycle)
+[Chu kỳ cường điệu hóa trên Wikipedia](https://en.wikipedia.org/wiki/Hype_cycle)
 
-> We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.
+> Chúng ta có xu hướng đánh giá cao hiệu quả của một công nghệ trong ngắn hạn và đánh giá thấp hiệu quả về lâu dài.
 >
 > (Roy Amara)
 
-The Hype Cycle is a visual representation of the excitement and development of technology over time, originally produced by Gartner. It is best shown with a visual:
+Hype Cycle là hình ảnh đại diện cho sự sôi động và phát triển của công nghệ theo thời gian, ban đầu được sản xuất bởi Gartner. Nó được hiển thị tốt nhất bằng hình ảnh:
 
 ![Chu kỳ Hype](./images/gartner_hype_cycle.png)
 
 *(Tham khảo hình ảnh: Bởi Jeremykemp tại Wikipedia tiếng Anh, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
 
-In short, this cycle suggests that there is typically a burst of excitement around new technology and its potential impact. Teams often jump into these technologies quickly, and sometimes find themselves disappointed with the results. This might be because the technology is not yet mature enough, or real-world applications are not yet fully realised. After a certain amount of time, the capabilities of the technology increase and practical opportunities to use it increase, and teams can finally become productive. Roy Amara's quote sums this up most succinctly - "We tend to overestimate the effect of a technology in the short run and underestimate in the long run".
+Nói tóm lại, chu kỳ này cho thấy rằng thường có sự bùng nổ về công nghệ mới và tác động tiềm tàng của nó. Các đội thường nhanh chóng tham gia vào các công nghệ này, và đôi khi cảm thấy thất vọng với kết quả. Điều này có thể là do công nghệ chưa đủ trưởng thành hoặc các ứng dụng trong thế giới thực vẫn chưa được thực hiện đầy đủ. Sau một khoảng thời gian nhất định, khả năng của công nghệ tăng lên và các cơ hội thực tế để sử dụng nó cũng tăng lên, và các nhóm cuối cùng có thể trở nên hiệu quả. Câu nói của Roy Amara tóm tắt điều này một cách ngắn gọn nhất - "Chúng ta có xu hướng đánh giá quá cao tác dụng của một công nghệ trong ngắn hạn và đánh giá thấp về lâu dài".
 
-### Hyrum's Law (The Law of Implicit Interfaces)
+### Luật Hyrum (Luật của các giao diện ngầm)
 
 [Luật trực tuyến của Hyrum](http://www.hyrumslaw.com/)
 
-> With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviours of your system will be depended on by somebody.
+> Với đủ số lượng người dùng đủ lớn, điều bạn cam kết trong đặc tả không quan trọng: tất cả các hành vi có thể quan sát được trên hệ thống của bạn sẽ phụ thuộc vào ai đó.
 >
 > (Hyrum Wright)
 
-Hyrum's Law states that when you have a *large enough number of consumers* of an API, all behaviours of the API (even those not defined as part of a public contract) will eventually come to be depended on by someone. A trivial example may be non-functional elements such as the response time of an API. A more subtle example might be consumers who are relying on applying a regex to an error message to determine the *type* of error of an API. Even if the public contract of the API states nothing about the contents of the message, indicating users should use an associated error code, *some* users may use the message, and changing the message essentially breaks the API for those users.
+Luật của Hyrum tuyên bố rằng khi bạn có một *số lượng đủ lớn lời gọi đến bộ* API, tất cả các hành vi của API (ngay cả những hành vi không được định nghĩa là một phần của hợp đồng công khai) cuối cùng sẽ phụ thuộc vào ai đó. Ví dụ đơn giản có thể là các tính phi chức năng, như thời gian phản hồi của một API. Một ví dụ tinh tế hơn có thể là người tiêu dùng đang dựa vào việc áp dụng regex cho một thông báo lỗi để xác định *loại* lỗi của một API. Ngay cả khi hợp đồng công khai của API không nêu gì về nội dung của thông báo, cho biết người dùng nên sử dụng mã lỗi liên quan, *một số* người dùng có thể sử dụng thông báo và việc thay đổi thông báo về cơ bản sẽ phá vỡ API đối với những người dùng đó.
 
-See also:
+Xem thêm:
 
-- [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
+- [Luật trừu tượng rò rỉ](#the-law-of-leaky-abstractions)
 - [XKCD 1172](https://xkcd.com/1172/)
 
-### Kernighan's Law
+### Định luật Kernighan
 
-> Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+> Gỡ lỗi khó gấp đôi so với viết mã ngay từ đầu. Do đó, nếu bạn viết mã một cách khéo léo nhất có thể, theo định nghĩa, bạn không đủ thông minh để gỡ lỗi nó.
 >
 > (Brian Kernighan)
 
-Kernighan's Law is named for [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan) and derived from a quote from Kernighan and Plauger's book [The Elements of Programming Style](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style):
+Định luật Kernighan được đặt tên cho [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan) và bắt nguồn từ một trích dẫn từ cuốn sách [Các yếu tố của phong cách lập trình của](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style) Kernighan và Plauger:
 
-> Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?
+> Mọi người đều biết rằng việc gỡ lỗi khó gấp đôi so với việc viết một chương trình ngay từ đầu. Vì vậy, nếu bạn thông minh hết mức có thể khi bạn viết nó, làm thế nào bạn sẽ gỡ lỗi nó?
 
-While hyperbolic, Kernighan's Law makes the argument that simple code is to be preferred over complex code, because debugging any issues that arise in complex code may be costly or even infeasible.
+Mặc dù hyperbolic, Luật Kernighan đưa ra lập luận rằng mã đơn giản được ưu tiên hơn mã phức tạp, bởi vì việc gỡ lỗi bất kỳ vấn đề nào phát sinh trong mã phức tạp có thể tốn kém hoặc thậm chí không khả thi.
 
-See also:
+Xem thêm:
 
 - [Nguyên tắc KISS](#the-kiss-principle)
 - [Triết lý Unix](#the-unix-philosophy)
 - [Dao cạo của Occam](#occams-razor)
 
-### Linus's Law
+### Luật Linus
 
-[Linus's Law on Wikipedia](https://en.wikipedia.org/wiki/Linus%27s_law)
+[Luật Linus trên Wikipedia](https://en.wikipedia.org/wiki/Linus%27s_law)
 
-> Given enough eyeballs, all bugs are shallow.
+> Càng nhiều người nhìn vào sẽ lấy ra nhiều lỗi.
 >
 > *Eric S. Raymond*
 
-This law simply states that the more people who can see a problem, the higher the likelihood that someone will have seen and solved the problem before, or something very similar.
+Luật này chỉ đơn giản nói rằng càng nhiều người có thể nhìn thấy một vấn đề, thì khả năng một người nào đó đã nhìn thấy và giải quyết vấn đề đó trước đây, hoặc một cái gì đó tương tự.
 
-Although it was originally used to describe the value of open-source models for projects it can be accepted for any kind of software project. It can also be extended to processes - more code reviews, more static analysis and multi-disciplined test processes will make the problems more visible and easy to identify.
+Mặc dù ban đầu nó được sử dụng để mô tả giá trị của các mô hình mã nguồn mở cho các dự án, nó có thể được chấp nhận cho bất kỳ loại dự án phần mềm nào. Nó cũng có thể được mở rộng cho các quy trình - nhiều đánh giá mã hơn, phân tích tĩnh hơn và các quy trình kiểm tra đa nguyên tắc sẽ làm cho các vấn đề hiển thị và dễ xác định hơn.
 
-A more formal statement can be:
+Một tuyên bố chính thức hơn có thể là:
 
-> Given a large enough beta-tester and co-developer base, almost every problem will be characterized quickly and can be solved by someone who has encountered a similar problem before.
+> Với cơ sở người thử nghiệm beta và đồng phát triển đủ lớn, hầu hết mọi vấn đề sẽ được xác định một cách nhanh chóng và có thể được giải quyết bởi những người đã từng gặp sự cố tương tự trước đây.
 
-This law was named in honour of [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) in Eric S. Raymond's book "[The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)".
+Luật này được đặt tên để vinh danh [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) trong cuốn sách " [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar) " của Eric S. Raymond.
 
-### Metcalfe's Law
+### Định luật Metcalfe
 
-[Metcalfe's Law on Wikipedia](https://en.wikipedia.org/wiki/Metcalfe's_law)
+[Luật Metcalfe trên Wikipedia](https://en.wikipedia.org/wiki/Metcalfe's_law)
 
-> In network theory, the value of a system grows as approximately the square of the number of users of the system.
+> Trong lý thuyết mạng, giá trị của một hệ thống tăng lên xấp xỉ bình phương của số lượng người dùng của hệ thống.
 
-This law is based on the number of possible pairwise connections within a system and is closely related to [Reed's Law](#reeds-law). Odlyzko and others have argued that both Reed's Law and Metcalfe's Law overstate the value of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+Luật này dựa trên số lượng các kết nối theo cặp có thể có trong một hệ thống và có liên quan chặt chẽ với Định [luật Reed](#reeds-law) . Odlyzko và những người khác đã lập luận rằng cả Định luật Reed và Định luật Metcalfe đều phóng đại giá trị của hệ thống bằng cách không tính đến giới hạn nhận thức của con người về hiệu ứng mạng; xem [Số của Dunbar](#dunbars-number) .
 
-See also:
+Xem thêm:
 
 - [Luật Reed](#reeds-law)
 - [Số Dunbar](#dunbars-number)
 
-### Moore's Law
+### Định luật Moore
 
-[Moore's Law on Wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
+[Định luật Moore trên Wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
 
-> The number of transistors in an integrated circuit doubles approximately every two years.
+> Số lượng bóng bán dẫn trong một mạch tích hợp tăng gấp đôi khoảng hai năm một lần.
 
-Often used to illustrate the sheer speed at which semiconductor and chip technology has improved, Moore's prediction has proven to be highly accurate over from the 1970s to the late 2000s. In more recent years, the trend has changed slightly, partly due to [physical limitations on the degree to which components can be miniaturised](https://en.wikipedia.org/wiki/Quantum_tunnelling). However, advancements in parallelisation, and potentially revolutionary changes in semiconductor technology and quantum computing may mean that Moore's Law could continue to hold true for decades to come.
+Thường được sử dụng để minh họa tốc độ tuyệt đối mà công nghệ bán dẫn và chip đã được cải thiện, dự đoán của Moore đã được chứng minh là có độ chính xác cao trong khoảng thời gian từ những năm 1970 đến cuối những năm 2000. Trong những năm gần đây, xu hướng đã thay đổi một chút, một phần do [những hạn chế vật lý về mức độ thu nhỏ của các thành phần](https://en.wikipedia.org/wiki/Quantum_tunnelling) . Tuy nhiên, những tiến bộ trong quá trình song song hóa và những thay đổi có khả năng mang tính cách mạng trong công nghệ bán dẫn và điện toán lượng tử có thể có nghĩa là Định luật Moore có thể tiếp tục đúng trong nhiều thập kỷ tới.
 
-### Murphy's Law / Sod's Law
+### Định luật Murphy / Sod
 
-[Murphy's Law on Wikipedia](https://en.wikipedia.org/wiki/Murphy%27s_law)
+[Định luật Murphy trên Wikipedia](https://en.wikipedia.org/wiki/Murphy%27s_law)
 
-> Anything that can go wrong will go wrong.
+> Điều gì có thể xảy ra sai sót sẽ xảy ra sai sót.
 
-Related to [Edward A. Murphy, Jr](https://en.wikipedia.org/wiki/Edward_A._Murphy_Jr.) *Murphy's Law* states that if a thing can go wrong, it will go wrong.
+Liên quan đến [Edward A. Murphy, Định luật Jr](https://en.wikipedia.org/wiki/Edward_A._Murphy_Jr.) *Murphy* nói rằng nếu cái gì sai, nó sẽ lòi ra.
 
-This is a common adage among developers. Sometimes the unexpected happens when developing, testing or even in production. This can also be related to the (more common in British English) *Sod's Law*:
+Đây là một câu châm ngôn phổ biến giữa các nhà phát triển. Đôi khi điều không mong muốn xảy ra khi phát triển, thử nghiệm hoặc thậm chí trong quá trình sản xuất. Điều này cũng có thể liên quan đến Định *luật Sod* (phổ biến hơn trong tiếng Anh Anh):
 
-> If something can go wrong, it will, at the worst possible time.
+> Nếu điều gì đó có thể xảy ra, nó sẽ xảy ra vào thời điểm tồi tệ nhất có thể.
 
-These 'laws' are generally used in a comic sense. However, phenomena such as [*Confirmation Bias*](#TODO) and [*Selection Bias*](#TODO) can lead people to perhaps over-emphasise these laws (the majority of times when things work, they go unnoticed, failures however are more noticeable and draw more discussion).
+Những 'luật' này thường được sử dụng theo nghĩa truyện tranh. Tuy nhiên, các hiện tượng như [*Thiên lệch xác nhận*](#TODO) và [*Thiên lệch lựa chọn*](#TODO) có thể khiến mọi người có lẽ quá nhấn mạnh các định luật này (phần lớn khi mọi thứ hoạt động, chúng không được chú ý, tuy nhiên, thất bại lại được chú ý nhiều hơn và thu hút nhiều thảo luận hơn).
 
-See Also:
+Xem thêm:
 
 - [Khuynh hướng xác nhận](#TODO)
 - [Xu hướng lựa chọn](#TODO)
 
 ### Occam's Razor
 
-[Occam's Razor on Wikipedia](https://en.wikipedia.org/wiki/Occam's_razor)
+[Occam's Razor trên Wikipedia](https://en.wikipedia.org/wiki/Occam's_razor)
 
-> Entities should not be multiplied without necessity.
+> Các thực thể không nên được nhân lên khi không cần thiết.
 >
 > William của Ockham
 
-Occam's razor says that among several possible solutions, the most likely solution is the one with the least number of concepts and assumptions. This solution is the simplest and solves only the given problem, without introducing accidental complexity and possible negative consequences.
+Occam nói rằng trong số một số giải pháp khả thi, giải pháp khả dĩ nhất là giải pháp có ít khái niệm và giả định nhất. Giải pháp này là giải pháp đơn giản nhất và chỉ giải quyết được vấn đề đã cho, mà không tạo ra sự phức tạp ngẫu nhiên và hậu quả tiêu cực có thể xảy ra.
 
-See also:
+Xem thêm:
 
 - [YAGNI](#yagni)
 - [Không có viên đạn bạc: Sự phức tạp tình cờ và sự phức tạp thiết yếu](https://en.wikipedia.org/wiki/No_Silver_Bullet)
 
-Example:
+Thí dụ:
 
 - [Phát triển phần mềm tinh gọn: Loại bỏ lãng phí](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste)
 
-### Parkinson's Law
+### Định luật Parkinson
 
 [Parkinson's Law on Wikipedia](https://en.wikipedia.org/wiki/Parkinson%27s_law)
 
-> Work expands so as to fill the time available for its completion.
+> Công việc mở rộng để lấp đầy thời gian có sẵn để hoàn thành.
 
-In its original context, this Law was based on studies of bureaucracies. It may be pessimistically applied to software development initiatives, the theory being that teams will be inefficient until deadlines near, then rush to complete work by the deadline, thus making the actual deadline somewhat arbitrary.
+Trong bối cảnh ban đầu, Luật này dựa trên các nghiên cứu về các bộ máy quan liêu. Nó có thể được áp dụng một cách bi quan cho các sáng kiến phát triển phần mềm, lý thuyết cho rằng các nhóm sẽ hoạt động kém hiệu quả cho đến khi thời hạn gần kề, sau đó vội vàng hoàn thành công việc trước thời hạn, do đó làm cho thời hạn thực tế hơi tùy tiện.
 
-If this law were combined with [Hofstadter's Law](#hofstadters-law), an even more pessimistic viewpoint is reached - work will expand to fill the time available for its completion and *still take longer than expected*.
+Nếu luật này được kết hợp với Định luật [Hofstadter](#hofstadters-law) , một quan điểm thậm chí còn bi quan hơn - công việc sẽ mở rộng để lấp đầy thời gian có sẵn để hoàn thành và *vẫn mất nhiều thời gian hơn dự kiến* .
 
-See also:
+Xem thêm:
 
 - [Định luật Hofstadter](#hofstadters-law)
 
-### Premature Optimization Effect
+### Hiệu ứng tối ưu hóa sớm
 
 [Tối ưu hóa sớm trên WikiWikiWeb](http://wiki.c2.com/?PrematureOptimization)
 
-> Premature optimization is the root of all evil.
+> Tối ưu sớm là gốc rễ của mọi xấu xa.
 >
 > [(Donald Knuth)](https://twitter.com/realdonaldknuth?lang=en)
 
-In Donald Knuth's paper [Structured Programming With Go To Statements](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements), he wrote: "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: **premature optimization is the root of all evil**. Yet we should not pass up our opportunities in that critical 3%."
+Trong bài báo của Donald Knuth, [Structured Programming With Go To Statements](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements) , ông đã viết: "Các lập trình viên lãng phí rất nhiều thời gian để suy nghĩ hoặc lo lắng về tốc độ của các phần không quan trọng trong chương trình của họ và những nỗ lực về hiệu quả này thực sự có tác động tiêu cực mạnh khi gỡ lỗi và bảo trì được xem xét. Chúng ta nên quên đi những hiệu quả nhỏ, nói rằng khoảng 97% thời gian: **tối ưu hóa sớm là gốc rễ của mọi điều xấu** . Tuy nhiên, chúng ta không nên bỏ qua cơ hội của mình trong 3% quan trọng đó. "
 
-However, *Premature Optimization* can be defined (in less loaded terms) as optimizing before we know that we need to.
+Tuy nhiên, *Tối ưu hóa sớm* có thể được định nghĩa (theo thuật ngữ ít tải hơn) là tối ưu hóa trước khi chúng ta biết rằng chúng ta cần phải làm như vậy.
 
-### Putt's Law
+### Định luật Putt
 
-[Putt's Law on Wikipedia](https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat)
+[Luật Putt trên Wikipedia](https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat)
 
-> Technology is dominated by two types of people, those who understand what they do not manage and those who manage what they do not understand.
+> Công nghệ bị chi phối bởi hai loại người, những người hiểu những gì họ không quản lý và những người quản lý những gì họ không hiểu.
 
-Putt's Law is often followed by Putt's Corollary:
+Định luật Putt thường được tuân theo bởi Hệ quả Putt:
 
-> Every technical hierarchy, in time, develops a competence inversion.
+> Mọi hệ thống phân cấp kỹ thuật, theo thời gian, phát triển một sự nghịch đảo năng lực.
 
-These statements suggest that due to various selection criteria and trends in how groups organise, there will be a number of skilled people at working levels of a technical organisations, and a number of people in managerial roles who are not aware of the complexities and challenges of the work they are managing. This can be due to phenomena such as [The Peter Principle](#the-peter-principle) or [The Dilbert Principle](#the-dilbert-principle).
+Những tuyên bố này cho thấy rằng do các tiêu chí lựa chọn khác nhau và xu hướng trong cách tổ chức nhóm, sẽ có một số người có kỹ năng ở các cấp làm việc của một tổ chức kỹ thuật và một số người trong vai trò quản lý không nhận thức được sự phức tạp và thách thức của công việc mà họ đang quản lý. Điều này có thể là do các hiện tượng như [Nguyên tắc Peter](#the-peter-principle) hoặc [Nguyên tắc Dilbert](#the-dilbert-principle) .
 
-However, it should be stressed that Laws such as this are vast generalisations and may apply to *some* types of organisations, and not apply to others.
+Tuy nhiên, cần nhấn mạnh rằng các Luật như thế này là khái quát rộng lớn và có thể áp dụng cho *một số* loại hình tổ chức và không áp dụng cho các loại hình tổ chức khác.
 
-See also:
+Xem thêm:
 
-- [The Peter Principle](#the-peter-principle)
-- [The Dilbert Principle](#the-dilbert-principle)
+- [Nguyên tắc Peter](#the-peter-principle)
+- [Nguyên tắc Dilbert](#the-dilbert-principle)
 
-### Reed's Law
+### Luật Reed
 
-[Reed's Law on Wikipedia](https://en.wikipedia.org/wiki/Reed's_law)
+[Luật Reed trên Wikipedia](https://en.wikipedia.org/wiki/Reed's_law)
 
-> The utility of large networks, particularly social networks, scales exponentially with the size of the network.
+> Tiện ích trên các mạng lớn, đặc biệt là mạng xã hội, sẽ có quy mô theo cấp số nhân so với quy mô của mạng.
 
-This law is based on graph theory, where the utility scales as the number of possible sub-groups, which is faster than the number of participants or the number of possible pairwise connections. Odlyzko and others have argued that Reed's Law overstates the utility of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+Luật này dựa trên lý thuyết đồ thị, trong đó tiện ích mở rộng theo số lượng các nhóm con, nhanh hơn số lượng người tham gia hoặc số lượng các kết nối theo cặp có thể có. Odlyzko và những người khác đã lập luận rằng Định luật Reed phóng đại quá mức tiện ích của hệ thống bằng cách không tính đến các giới hạn nhận thức của con người về các hiệu ứng mạng; xem [Số của Dunbar](#dunbars-number) .
 
-See also:
+Xem thêm:
 
-- [Metcalfe's Law](#metcalfes-law)
-- [Dunbar's Number](#dunbars-number)
+- [Định luật Metcalfe](#metcalfes-law)
+- [Số Dunbar](#dunbars-number)
 
-### The Law of Conservation of Complexity (Tesler's Law)
+### Định luật Bảo toàn Độ phức tạp (Định luật Tesler)
 
-[The Law of Conservation of Complexity on Wikipedia](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
+[Luật bảo tồn sự phức tạp trên Wikipedia](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
 
-This law states that there is a certain amount of complexity in a system which cannot be reduced.
+Luật này nói rằng có một lượng phức tạp nhất định trong một hệ thống và chúng không thể giảm bớt.
 
-Some complexity in a system is 'inadvertent'. It is a consequence of poor structure, mistakes, or just bad modeling of a problem to solve. Inadvertent complexity can be reduced (or eliminated). However, some complexity is 'intrinsic' as a consequence of the complexity inherent in the problem being solved. This complexity can be moved, but not eliminated.
+Một số phức tạp trong một hệ thống là 'vô tình'. Đó là hệ quả của cấu trúc kém, sai lầm hoặc chỉ là mô hình hóa vấn đề cần giải quyết một cách tồi tệ. Sự phức tạp do sơ ý có thể được giảm bớt (hoặc loại bỏ). Tuy nhiên, một số phức tạp là 'nội tại' là hệ quả của sự phức tạp vốn có trong vấn đề đang được giải quyết. Sự phức tạp này có thể được di chuyển, nhưng không được loại bỏ.
 
-One interesting element to this law is the suggestion that even by simplifying the entire system, the intrinsic complexity is not reduced, it is *moved to the user*, who must behave in a more complex way.
+Một yếu tố thú vị đối với luật này là gợi ý rằng ngay cả khi đơn giản hóa toàn bộ hệ thống, độ phức tạp nội tại vẫn không giảm, nó được *chuyển đến người dùng* , người phải hành xử theo cách phức tạp hơn.
 
-### The Law of Demeter
+### Định luật Demeter
 
-[The Law of Demeter on Wikipedia](https://en.wikipedia.org/wiki/Law_of_Demeter)
+[Định luật Demeter trên Wikipedia](https://en.wikipedia.org/wiki/Law_of_Demeter)
 
-> Don't talk to strangers.
+> Đừng nói chuyện với người lạ.
 
-The Law of Demeter, also known as "The Principle of Least Knowledge" is a principle for software design, particularly relevant in object orientated languages.
+Định luật Demeter, còn được gọi là "Nguyên tắc của kiến thức ít nhất" là một nguyên tắc cho thiết kế phần mềm, đặc biệt thích hợp trong các ngôn ngữ hướng đối tượng.
 
-It states that a unit of software should talk only to its immediate collaborators. An object `A` with a reference to object `B` can call its methods, but if `B` has a reference to object `C`, `A` should not call `C`s methods. So, if `C` has a `doThing()` method, `A` should not invoke it directly; `B.getC().doThis()`.
+Nó nói rằng một đơn vị phần mềm chỉ nên nói chuyện với các cộng tác viên trực tiếp của nó. Một đối tượng `A` có tham chiếu đến đối tượng `B` có thể gọi các phương thức của nó, nhưng nếu `B` có tham chiếu đến đối tượng `C` , `A` không nên gọi các phương thức của `C` Vì vậy, nếu `C` có phương thức `doThing()` `A` không nên gọi nó trực tiếp; `B.getC().doThis()` .
 
-Following this principal limits the scope of changes, making them easier and safer in future.
+Việc tuân theo nguyên tắc chính này sẽ giới hạn phạm vi thay đổi, giúp chúng dễ dàng hơn và an toàn hơn trong tương lai.
 
-### The Law of Leaky Abstractions
+### Luật trừu tượng rò rỉ
 
-[The Law of Leaky Abstractions on Joel on Software](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
+[Luật về sự tóm tắt rò rỉ trên Joel trên phần mềm](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
-> All non-trivial abstractions, to some degree, are leaky.
+> Tất cả những thiết kế trừu tượng không tầm thường, ở một mức độ nào đó, đều bị rò rỉ.
 >
 > ( [Joel Spolsky](https://twitter.com/spolsky) )
 
-This law states that abstractions, which are generally used in computing to simplify working with complicated systems, will in certain situations 'leak' elements of the underlying system, this making the abstraction behave in an unexpected way.
+Luật này quy định rằng trừu tượng, thường được sử dụng trong máy tính để đơn giản hóa làm việc với các hệ thống phức tạp, trong một số tình huống nhất định sẽ làm 'rò rỉ' các phần tử của hệ thống cơ bản, điều này làm cho trừu tượng hoạt động theo cách không mong muốn.
 
-An example might be loading a file and reading its contents. The file system APIs are an *abstraction* of the lower level kernel systems, which are themselves an abstraction over the physical processes relating to changing data on a magnetic platter (or flash memory for an SSD). In most cases, the abstraction of treating a file like a stream of binary data will work. However, for a magnetic drive, reading data sequentially will be *significantly* faster than random access (due to increased overhead of page faults), but for an SSD drive, this overhead will not be present. Underlying details will need to be understood to deal with this case (for example, database index files are structured to reduce the overhead of random access), the abstraction 'leaks' implementation details the developer may need to be aware of.
+Một ví dụ có thể đang tải một tệp và đọc nội dung của nó. Các API hệ thống tệp là một phần *trừu tượng* của các hệ thống nhân cấp thấp hơn, bản thân chúng là một phần trừu tượng đối với các quá trình vật lý liên quan đến việc thay đổi dữ liệu trên đĩa từ tính (hoặc bộ nhớ flash cho SSD). Trong hầu hết các trường hợp, việc xử lý một tệp như một luồng dữ liệu nhị phân sẽ hoạt động. Tuy nhiên, đối với ổ đĩa từ tính, việc đọc dữ liệu tuần tự sẽ *nhanh hơn đáng kể* so với truy cập ngẫu nhiên (do lỗi trang tăng lên), nhưng đối với ổ đĩa SSD, chi phí này sẽ không xuất hiện. Cần phải hiểu chi tiết cơ bản để đối phó với trường hợp này (ví dụ: các tệp chỉ mục cơ sở dữ liệu được cấu trúc để giảm chi phí truy cập ngẫu nhiên), chi tiết triển khai 'rò rỉ' trừu tượng mà nhà phát triển có thể cần phải biết.
 
-The example above can become more complex when *more* abstractions are introduced. The Linux operating system allows files to be accessed over a network but represented locally as 'normal' files. This abstraction will 'leak' if there are network failures. If a developer treats these files as 'normal' files, without considering the fact that they may be subject to network latency and failures, the solutions will be buggy.
+Ví dụ trên có thể trở nên phức tạp *hơn khi có nhiều nội dung* trừu tượng hơn. Hệ điều hành Linux cho phép các tệp được truy cập qua mạng nhưng được trình bày cục bộ dưới dạng tệp 'bình thường'. Tóm tắt này sẽ 'rò rỉ' nếu có lỗi mạng. Nếu nhà phát triển coi các tệp này là tệp 'bình thường' mà không xem xét đến thực tế là chúng có thể phải chịu độ trễ và lỗi mạng, thì các giải pháp sẽ có lỗi.
 
-The article describing the law suggests that an over-reliance on abstractions, combined with a poor understanding of the underlying processes, actually makes dealing with the problem at hand *more* complex in some cases.
+Bài báo mô tả luật cho thấy rằng việc phụ thuộc quá nhiều vào những điều trừu tượng, kết hợp với sự hiểu biết kém về các quy trình cơ bản, thực sự khiến việc xử lý vấn đề trong một số trường hợp *trở nên phức tạp hơn.*
 
-See also:
+Xem thêm:
 
-- [Hyrum's Law](#hyrums-law-the-law-of-implicit-interfaces)
+- [Định luật Hyrum](#hyrums-law-the-law-of-implicit-interfaces)
 
-Real-world examples:
+Ví dụ trong thế giới thực:
 
-- [Photoshop Slow Startup](https://forums.adobe.com/thread/376152) - an issue I encountered in the past. Photoshop would be slow to startup, sometimes taking minutes. It seems the issue was that on startup it reads some information about the current default printer. However, if that printer is actually a network printer, this could take an extremely long time. The *abstraction* of a network printer being presented to the system similar to a local printer caused an issue for users in poor connectivity situations.
+- [Photoshop khởi động chậm](https://forums.adobe.com/thread/376152) - một vấn đề tôi gặp phải trong quá khứ. Photoshop khởi động chậm, đôi khi mất vài phút. Có vẻ như vấn đề là khi khởi động, nó đọc một số thông tin về máy in mặc định hiện tại. Tuy nhiên, nếu máy in đó thực sự là một máy in mạng, thì quá trình này có thể mất rất nhiều thời gian. Sự *trừu tượng* của một máy in mạng được trình bày cho hệ thống tương tự như một máy in cục bộ đã gây ra sự cố cho người dùng trong các tình huống kết nối kém.
 
-### The Law of Triviality
+### Luật về Sự tầm thường
 
-[The Law of Triviality on Wikipedia](https://en.wikipedia.org/wiki/Law_of_triviality)
+[Luật Sự Tầm Thường trên Wikipedia](https://en.wikipedia.org/wiki/Law_of_triviality)
 
-This law suggests that groups will give far more time and attention to trivial or cosmetic issues rather than serious and substantial ones.
+Luật này gợi ý rằng các nhóm sẽ dành nhiều thời gian và sự chú ý hơn cho những vấn đề nhỏ nhặt hoặc thẩm mỹ hơn là những vấn đề nghiêm trọng và thực chất.
 
-The common fictional example used is that of a committee approving plans for nuclear power plant, who spend the majority of their time discussing the structure of the bike shed, rather than the far more important design for the power plant itself. It can be difficult to give valuable input on discussions about very large, complex topics without a high degree of subject matter expertise or preparation. However, people want to be seen to be contributing valuable input. Hence a tendency to focus too much time on small details, which can be reasoned about easily, but are not necessarily of particular importance.
+Ví dụ hư cấu phổ biến được sử dụng là một ủy ban phê duyệt kế hoạch cho nhà máy điện hạt nhân, họ dành phần lớn thời gian để thảo luận về cấu trúc của nhà để xe đạp, thay vì thiết kế quan trọng hơn nhiều cho chính nhà máy điện. Có thể khó đưa ra ý kiến đóng góp có giá trị cho các cuộc thảo luận về các chủ đề rất lớn, phức tạp nếu không có sự chuẩn bị hoặc chuyên môn cao về chủ đề. Tuy nhiên, mọi người muốn được xem là đóng góp ý kiến đóng góp có giá trị. Do đó, có xu hướng tập trung quá nhiều thời gian vào những chi tiết nhỏ, có thể dễ dàng lý giải, nhưng không nhất thiết phải có tầm quan trọng đặc biệt.
 
-The fictional example above led to the usage of the term 'Bike Shedding' as an expression for wasting time on trivial details. A related term is '[Yak Shaving](https://en.wiktionary.org/wiki/yak_shaving),' which connotes a seemingly irrelevant activity that is part of a long chain of prerequisites to the main task.
+Ví dụ hư cấu ở trên đã dẫn đến việc sử dụng thuật ngữ 'lo thiết kế nhà để xe đạp' như một cách diễn đạt cho việc lãng phí thời gian vào những chi tiết nhỏ nhặt. Một thuật ngữ liên quan là ' [Yak Shaving](https://en.wiktionary.org/wiki/yak_shaving) ', có nghĩa là một hoạt động dường như không liên quan nhưng là một phần của chuỗi dài các điều kiện tiên quyết đối với nhiệm vụ chính.
 
-### The Unix Philosophy
+### Triết lý Unix
 
-[The Unix Philosophy on Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy)
+[Triết lý Unix trên Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy)
 
-The Unix Philosophy is that software components should be small, and focused on doing one specific thing well. This can make it easier to build systems by composing together small, simple, well-defined units, rather than using large, complex, multi-purpose programs.
+Triết lý của Unix là các thành phần phần mềm phải nhỏ và tập trung vào làm tốt một việc cụ thể. Điều này có thể giúp dễ dàng hơn trong việc xây dựng hệ thống bằng cách biên soạn các đơn vị nhỏ, đơn giản, được xác định rõ ràng, thay vì sử dụng các chương trình lớn, phức tạp, đa mục đích.
 
-Modern practices like 'Microservice Architecture' can be thought of as an application of this law, where services are small, focused and do one specific thing, allowing complex behaviour to be composed of simple building blocks.
+Các thực hành hiện đại như 'Kiến trúc Microservice' có thể được coi là một ứng dụng của luật này, trong đó các dịch vụ nhỏ, tập trung và thực hiện một việc cụ thể, cho phép hành vi phức tạp bao gồm các khối xây dựng đơn giản.
 
-### The Scout Rule
+### Quy tắc Scout
 
-[The Scout Rule on O'Reilly](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
+[Quy tắc hướng đạo sinh trên O'Reilly](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
 
-> Always leave the code better than you found it.
+> Luôn để lại mã tốt hơn khi bạn tìm thấy.
 >
 > (Robert C. Martin (Uncle Bob))
 
-Based on the "Scout Rule", which is "always leave the campground cleaner than you found it", the Scout Rule in programming is simply "always leave the code cleaner than you found it".
+Dựa trên "Quy tắc Hướng đạo", là "luôn để khu cắm trại sạch sẽ hơn khi bạn đến", Quy tắc Hướng đạo trong lập trình chỉ đơn giản là "luôn để mã sạch hơn những gì bạn tìm thấy".
 
-This was introduced in the first chapter of the book [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) by Bob Martin. The rule suggests that developers should perform 'optimistic refactoring', which means to endeavour to improve the overall quality of the code when you work on it. If you see a mistake, attempt to fix it or clean it up. However, when making changes to code which seems incorrect, it may be worth remembering [Chesterton's Fence](#chestertons-fence)!
+Điều này đã được giới thiệu trong chương đầu tiên của cuốn sách [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) của Bob Martin. Quy tắc gợi ý rằng các nhà phát triển nên thực hiện 'tái cấu trúc lạc quan', có nghĩa là cố gắng cải thiện chất lượng tổng thể của mã khi bạn làm việc trên nó. Nếu bạn thấy lỗi, hãy cố gắng sửa chữa hoặc làm sạch nó. Tuy nhiên, khi thực hiện các thay đổi đối với mã có vẻ không chính xác, bạn nên nhớ [Chesterton's Fence](#chestertons-fence) !
 
-See also:
+Xem thêm:
 
 - [Danh sách đọc: Mã sạch](#reading-list)
 - [Chesterton's Fence](#chestertons-fence)
@@ -630,365 +628,365 @@ See also:
 
 https://www.amazon.sg/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
 
-### The Spotify Model
+### Mô hình Spotify
 
 [Mô hình Spotify trên Spotify Labs](https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/)
 
-The Spotify Model is an approach to team and organisation structure which has been popularised by 'Spotify'. In this model, teams are organised around features, rather than technologies.
+Mô hình Spotify là một phương pháp tiếp cận cấu trúc tổ chức và nhóm đã được phổ biến bởi 'Spotify'. Trong mô hình này, các nhóm được tổ chức xung quanh các tính năng, thay vì công nghệ.
 
-The Spotify Model also popularises the concepts of Tribes, Guilds, Chapters, which are other components of their organisation structure.
+Mô hình Spotify cũng phổ biến các khái niệm về Bộ lạc, Bang hội, Chi hội, là các thành phần khác trong cơ cấu tổ chức của chúng.
 
-Members of the organisation have described that the actual meaning of these groups changes, evolves and is an on-going experiment. The fact that the model is a *process in motion*, rather than a fixed model continues to lead to varying interpretations of the structure, which may be based on presentations given by employees at conferences. This means 'snapshots' may be 're-packaged' by third parties as a *fixed structure*, with the fact that the model is dynamic being lost.
+Các thành viên của tổ chức đã mô tả rằng ý nghĩa thực tế của các nhóm này thay đổi, phát triển và là một thử nghiệm đang diễn ra. Thực tế là mô hình là một *quá trình đang vận động* , chứ không phải là một mô hình cố định tiếp tục dẫn đến các cách hiểu khác nhau về cấu trúc, có thể dựa trên các bài thuyết trình của nhân viên tại các hội nghị. Điều này có nghĩa là 'ảnh chụp nhanh' có thể được bên thứ ba 'đóng gói lại' như một *cấu trúc cố định* , với thực tế là mô hình động sẽ bị mất.
 
-### The Two Pizza Rule
+### Quy tắc hai chiếc bánh pizza
 
-> If you can't feed a team with two pizzas, it's too large.
+> Nếu một 2 chiếc bánh pizza không đủ cho một nhóm, thì nhóm đó đã quá lớn
 >
 > (Jeff Bezos)
 
-This rule suggests that regardless of the size of the company, teams should be small enough to be fed by two pizzas. Attributed to Jeff Bezos and Amazon, this belief suggests that large teams are inherently inefficient. This is supported by the fact that as the team size increases linearly, the links between people increases quadratically; thus the cost of coordinating and communicating also grows quadratically. If this cost of coordination is essentially overhead, then smaller teams should be preferred.
+Quy tắc này cho thấy rằng bất kể quy mô của công ty, các đội nên đủ nhỏ để có thể ăn hai chiếc pizza. Được gán cho Jeff Bezos và Amazon, niềm tin này cho thấy rằng các đội lớn vốn đã kém hiệu quả. Điều này được hỗ trợ bởi thực tế là khi quy mô nhóm tăng tuyến tính, liên kết giữa mọi người sẽ tăng theo bậc hai; do đó chi phí phối hợp và giao tiếp cũng tăng theo bậc hai. Nếu chi phí phối hợp này về cơ bản là tổng chi phí, thì các nhóm nhỏ hơn nên được ưu tiên hơn.
 
 Số lượng liên kết giữa mọi người có thể được biểu thị bằng `n(n-1)/2` trong đó n = số người.
 
 <img width="200px" alt="Đồ thị hoàn chỉnh; Liên kết giữa mọi người" src="./images/complete_graph.png">
 
-### Wadler's Law
+### Luật Wadler
 
-[Wadler's Law on wiki.haskell.org](https://wiki.haskell.org/Wadler's_Law)
+[Luật của Wadler trên wiki.haskell.org](https://wiki.haskell.org/Wadler's_Law)
 
-> In any language design, the total time spent discussing a feature in this list is proportional to two raised to the power of its position.
+> Trong bất kỳ thiết kế ngôn ngữ nào, tổng thời gian dành để thảo luận về một tính năng trong danh sách này tỷ lệ thuận với hai phần được nâng lên với sức mạnh của vị trí của nó.
 >
-> 1. Semantics
-> 2. Syntax
-> 3. Lexical syntax
-> 4. Lexical syntax of comments
+> 1. Ngữ nghĩa học
+> 2. Cú pháp
+> 3. Cú pháp từ vựng
+> 4. Cú pháp đơn giản của nhận xét
 >
-> (In short, for every hour spent on semantics, 8 hours will be spent on the syntax of comments).
+> (Nói tóm lại, cứ mỗi giờ dành cho ngữ nghĩa thì 8 giờ sẽ dành cho cú pháp của chú thích).
 
-Similar to [The Law of Triviality](#the-law-of-triviality), Wadler's Law states what when designing a language, the amount of time spent on language structures is disproportionately high in comparison to the importance of those features.
+Tương tự như [Định luật về tính tầm thường](#the-law-of-triviality) , Định luật của Wadler cho biết khi thiết kế một ngôn ngữ, lượng thời gian dành cho các cấu trúc ngôn ngữ cao hơn một cách tương xứng so với tầm quan trọng của những tính năng đó.
 
-See also:
+Xem thêm:
 
 - [Luật tầm thường](#the-law-of-triviality)
 
-### Wheaton's Law
+### Định luật Wheaton
 
 [Liên kết](http://www.wheatonslaw.com/)
 
 [Ngày chính thức](https://dontbeadickday.com/)
 
-> Don't be a dick.
+> Đừng khôn kiểu ranh ma.
 >
 > *Wil Wheaton*
 
-Coined by Wil Wheaton (Star Trek: The Next Generation, The Big Bang Theory), this simple, concise, and powerful law aims for an increase in harmony and respect within a professional organization. It can be applied when speaking with coworkers, performing code reviews, countering other points of view, critiquing, and in general, most professional interactions humans have with each other.
+Được đặt ra bởi Wil Wheaton (Star Trek: The Next Generation, The Big Bang Theory), luật đơn giản, ngắn gọn và mạnh mẽ này nhằm mục đích tăng cường sự hòa hợp và tôn trọng trong một tổ chức chuyên nghiệp. Nó có thể được áp dụng khi nói chuyện với đồng nghiệp, thực hiện đánh giá mã, phản bác các quan điểm khác, phê bình và nói chung, hầu hết các tương tác chuyên nghiệp mà con người có với nhau.
 
-## Principles
+## Nguyên tắc
 
-Principles are generally more likely to be guidelines relating to design.
+Các nguyên tắc thường có nhiều khả năng là các hướng dẫn liên quan đến thiết kế.
 
-### All Models Are Wrong (George Box's Law)
+### Tất cả các mô hình đều sai (Định luật George Box)
 
 [Tất cả các mô hình đều sai](https://en.wikipedia.org/wiki/All_models_are_wrong)
 
-> All models are wrong, but some are useful.
+> Tất cả các mô hình đều sai, nhưng một số mô hình hữu ích.
 >
 > *George Box*
 
-This principle suggests that all models of systems are flawed, but that as long as they are not *too* flawed they may be useful. This principle has its roots in statistics but applies to scientific and computing models as well.
+Nguyên tắc này cho thấy rằng tất cả các mô hình hệ thống đều có sai sót, nhưng miễn là chúng không *quá* sai sót thì chúng có thể hữu ích. Nguyên tắc này có nguồn gốc từ thống kê nhưng cũng áp dụng cho các mô hình khoa học và máy tính.
 
-A fundamental requirement of most software is to model a system of some kind. Regardless of whether the system being modeled is a computer network, a library, a graph of social connections or any other kind of system, the designer will have to decide an appropriate level of detail to model. Excessive detail may lead to too much complexity, too little detail may prevent the model from being functional.
+Yêu cầu cơ bản của hầu hết các phần mềm là mô hình hóa một hệ thống nào đó. Bất kể hệ thống được mô hình hóa là mạng máy tính, thư viện, biểu đồ kết nối xã hội hay bất kỳ loại hệ thống nào khác, nhà thiết kế sẽ phải quyết định mức độ chi tiết thích hợp để mô hình hóa. Quá nhiều chi tiết có thể dẫn đến quá nhiều phức tạp, quá ít chi tiết có thể khiến mô hình không hoạt động được.
 
-See also:
+Xem thêm:
 
 - [Luật trừu tượng rò rỉ](#the-law-of-leaky-abstractions)
 
 ### Chesterton's Fence
 
-[Chesterton's Fence on Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence)
+[Chesterton's Fence trên Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence)
 
-> Reforms should not be made until the reasoning behind the existing state of affairs is understood.
+> Không nên cải cách cho đến khi hiểu được lý do đằng sau tình trạng hiện tại.
 
-This principle is relevant in software engineering when removing technical debt. Each line of a program was originally written by someone for some reason. Chesterton's Fence suggests that one should try to understand the context and meaning of the code fully, before changing or removing it, even if at first glance it seems redundant or incorrect.
+Nguyên tắc này có liên quan trong kỹ thuật phần mềm khi loại bỏ nợ kỹ thuật. Mỗi dòng của một chương trình ban đầu được viết bởi một người nào đó vì một lý do nào đó. Chesterton's Fence gợi ý rằng người ta nên cố gắng hiểu ngữ cảnh và ý nghĩa của mã một cách đầy đủ, trước khi thay đổi hoặc loại bỏ nó, ngay cả khi thoạt nhìn nó có vẻ thừa hoặc không chính xác.
 
-The name of this principle comes from a story by [G.K. Chesterton](https://en.wikipedia.org/wiki/G._K._Chesterton). A man comes across a fence crossing the middle of the road. He complains to the mayor that this useless fence is getting in the way, and asks to remove it. The mayor asks why the fence is there in the first place. When the man says he doesn't know, the mayor says, "If you don't know its purpose, I certainly won't let you remove it. Go and find out the use of it, and then I may let you destroy it."
+Tên của nguyên tắc này bắt nguồn từ một câu chuyện của [GK Chesterton](https://en.wikipedia.org/wiki/G._K._Chesterton) . Một người đàn ông băng qua hàng rào giữa đường. Anh ta phàn nàn với thị trưởng rằng hàng rào vô dụng này đang cản trở, và yêu cầu dỡ bỏ nó. Thị trưởng hỏi tại sao lại có hàng rào ngay từ đầu. Khi người đàn ông nói rằng anh ta không biết, thị trưởng nói, "Nếu bạn không biết mục đích của nó, tôi chắc chắn sẽ không để bạn gỡ bỏ nó. Hãy đi tìm hiểu công dụng của nó, và sau đó tôi có thể cho phép bạn phá hủy. nó."
 
-### The Dead Sea Effect
+### Hiệu ứng Biển Chết
 
-[The Dead Sea Effect on Bruce F. Webster](http://brucefwebster.com/2008/04/11/the-wetware-crisis-the-dead-sea-effect/)
+[Hiệu ứng Biển Chết với Bruce F. Webster](http://brucefwebster.com/2008/04/11/the-wetware-crisis-the-dead-sea-effect/)
 
-> "... [T]he more talented and effective IT engineers are the ones most likely to leave - to evaporate ... [those who tend to] remain behind [are] the 'residue' — the least talented and effective IT engineers."
+> Các kỹ sư CNTT tài năng là những người có nhiều khả năng ra đi, ... [những người có xu hướng] ở lại [là] - những kỹ sư CNTT kém tài năng và hiệu quả.
 >
 > *Bruce F. Webster*
 
-The "Dead Sea Effect" suggests that in any organisation, the skills/talent/efficacy of engineers is often inversely proportional to their time in the company.
+"Hiệu ứng Biển Chết" cho thấy rằng trong bất kỳ tổ chức nào, kỹ năng / tài năng / hiệu quả của các kỹ sư thường tỷ lệ nghịch với thời gian của họ trong công ty.
 
-Typically, highly skilled engineers find it easy to gain employment elsewhere and are the first to do so. Engineers who have obsolete or weak skills will tend to remain with the company, as finding employment elsewhere is difficult. This is particularly pronounced if they have gained incremental pay rises over their time in the company, as it can be challenging to get equivalent remuneration elsewhere.
+Thông thường, các kỹ sư có tay nghề cao sẽ dễ dàng kiếm được việc làm ở nơi khác và là những người đầu tiên làm như vậy. Những kỹ sư có kỹ năng lạc hậu hoặc yếu kém sẽ có xu hướng ở lại công ty, vì rất khó tìm việc làm ở nơi khác. Điều này đặc biệt rõ ràng nếu họ nhận được mức lương tăng dần theo thời gian làm việc tại công ty, vì việc nhận được mức thù lao tương đương ở những nơi khác có thể là một thách thức.
 
-### The Dilbert Principle
+### Nguyên tắc Dilbert
 
-[The Dilbert Principle on Wikipedia](https://en.wikipedia.org/wiki/Dilbert_principle)
+[Nguyên tắc Dilbert trên Wikipedia](https://en.wikipedia.org/wiki/Dilbert_principle)
 
-> Companies tend to systematically promote incompetent employees to management to get them out of the workflow.
+> Các công ty có xu hướng thăng chức một cách có hệ thống những nhân viên không đủ năng lực lên ban quản lý để đưa họ ra khỏi quy trình làm việc.
 >
 > *Scott Adams*
 
-A management concept developed by Scott Adams (creator of the Dilbert comic strip), the Dilbert Principle is inspired by [The Peter Principle](#the-peter-principle). Under the Dilbert Principle, employees who were never competent are promoted to management in order to limit the damage they can do. Adams first explained the principle in a 1995 Wall Street Journal article, and expanded upon it in his 1996 business book, [The Dilbert Principle](#reading-list).
+Là một khái niệm quản lý được phát triển bởi Scott Adams (tác giả của bộ truyện tranh Dilbert), Nguyên tắc Dilbert được lấy cảm hứng từ [Nguyên tắc Peter](#the-peter-principle) . Theo Nguyên tắc Dilbert, những nhân viên chưa từng có năng lực sẽ được thăng chức lên cấp quản lý để hạn chế thiệt hại mà họ có thể gây ra. Adams lần đầu tiên giải thích nguyên tắc này trong một bài báo trên Tạp chí Phố Wall năm 1995, và mở rộng nó trong cuốn sách kinh doanh năm 1996 của ông, [Nguyên tắc Dilbert](#reading-list) .
 
 Xem thêm:
 
 - [Nguyên tắc Peter](#the-peter-principle)
 - [Định luật Putt](#putts-law)
 
-### The Pareto Principle (The 80/20 Rule)
+### Nguyên tắc Pareto (Quy tắc 80/20)
 
-[The Pareto Principle on Wikipedia](https://en.wikipedia.org/wiki/Pareto_principle)
+[Nguyên tắc Pareto trên Wikipedia](https://en.wikipedia.org/wiki/Pareto_principle)
 
-> Most things in life are not distributed evenly.
+> Hầu hết mọi thứ trong cuộc sống không được phân bổ đồng đều.
 
-The Pareto Principle suggests that in some cases, the majority of results come from a minority of inputs:
+Nguyên tắc Pareto gợi ý rằng trong một số trường hợp, phần lớn kết quả đến từ một số ít đầu vào:
 
-- 80% of a certain piece of software can be written in 20% of the total allocated time (conversely, the hardest 20% of the code takes 80% of the time)
-- 20% of the effort produces 80% of the result
-- 20% of the work creates 80% of the revenue
-- 20% of the bugs cause 80% of the crashes
-- 20% of the features cause 80% of the usage
+- 80% một phần mềm nhất định có thể được viết trong 20% tổng thời gian được phân bổ (ngược lại, 20% mã khó nhất chiếm 80% thời gian)
+- 20% nỗ lực tạo ra 80% kết quả
+- 20% công việc tạo ra 80% doanh thu
+- 20% lỗi gây ra 80% sự cố
+- 20% tính năng được dùng 80%
 
-In the 1940s American-Romanian engineer Dr. Joseph Juran, who is widely credited with being the father of quality control, [began to apply the Pareto principle to quality issues](https://en.wikipedia.org/wiki/Joseph_M._Juran).
+Vào những năm 1940, kỹ sư người Mỹ-Romania, Tiến sĩ Joseph Juran, người được công nhận rộng rãi là cha đẻ của kiểm soát chất lượng, [đã bắt đầu áp dụng nguyên tắc Pareto cho các vấn đề chất lượng](https://en.wikipedia.org/wiki/Joseph_M._Juran) .
 
-This principle is also known as: The 80/20 Rule, The Law of the Vital Few, and The Principle of Factor Sparsity.
+Nguyên tắc này còn được gọi là: Quy tắc 80/20, Quy luật số ít và Nguyên tắc về yếu tố thưa thớt.
 
-Real-world examples:
+Ví dụ trong thế giới thực:
 
-- In 2002 Microsoft reported that by fixing the top 20% of the most-reported bugs, 80% of the related errors and crashes in windows and office would become eliminated ([Reference](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
+- Vào năm 2002, Microsoft đã báo cáo rằng bằng cách sửa 20% lỗi được báo cáo nhiều nhất, 80% lỗi liên quan và sự cố trong windows và office sẽ bị loại bỏ ( [Tham khảo](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm) ).
 
-### The Shirky Principle
+### Nguyên tắc Shirky
 
-[The Shirky Principle explained](https://kk.org/thetechnium/the-shirky-prin/)
+[Nguyên tắc Shirky được giải thích như sau](https://kk.org/thetechnium/the-shirky-prin/)
 
-> Institutions will try to preserve the problem to which they are the solution.
+> Các tổ chức sẽ cố gắng duy trì vấn đề mà họ là giải pháp.
 >
 > *Clay Shirky*
 
-The Shirky Principle suggests that complex solutions - a company, an industry, or a technology - can become so focused on the problem that they are solving, that they can inadvertently perpetuate the problem itself. This may be deliberate (a company striving to find new nuances to a problem which justify continued development of a solution), or inadvertent (being unable or unwilling to accept or build a solution which solves the problem completely or obviates it).
+Nguyên tắc Shirky gợi ý rằng các giải pháp phức tạp - một công ty, một ngành hoặc một công nghệ - có thể trở nên quá tập trung vào vấn đề mà họ đang giải quyết, đến nỗi chúng có thể vô tình kéo dài vấn đề. Điều này có thể là cố ý (một công ty đang cố gắng tìm ra những sắc thái mới cho một vấn đề để biện minh cho việc tiếp tục phát triển một giải pháp), hoặc vô tình (không thể hoặc không sẵn sàng chấp nhận hoặc xây dựng một giải pháp giải quyết được hoàn toàn hoặc loại bỏ nó).
 
 Có quan hệ với:
 
-- Upton Sinclair's famous line, *"It is difficult to get a man to understand something, when his salary depends upon his not understanding it!"*
+- Câu nói nổi tiếng của Upton Sinclair, *"Rất khó để khiến một người đàn ông hiểu điều gì đó, khi mức lương của anh ta phụ thuộc vào việc anh ta không hiểu điều đó!"*
 - Clay Christensen's *The Innovator's Dilemma*
-
-See also:
-
-- [Pareto Principle](#the-pareto-principle-the-8020-rule)
-
-### The Peter Principle
-
-[The Peter Principle on Wikipedia](https://en.wikipedia.org/wiki/Peter_principle)
-
-> People in a hierarchy tend to rise to their "level of incompetence".
->
-> *Laurence J. Peter*
-
-A management concept developed by Laurence J. Peter, the Peter Principle observes that people who are good at their jobs are promoted, until they reach a level where they are no longer successful (their "level of incompetence"). At this point, as they are more senior, they are less likely to be removed from the organisation (unless they perform spectacularly badly) and will continue to reside in a role which they have few intrinsic skills at, as their original skills which made them successful are not necessarily the skills required for their new jobs.
-
-This is of particular interest to engineers - who initially start out in deeply technical roles, but often have a career path which leads to *managing* other engineers - which requires a fundamentally different skills-set.
-
-See Also:
-
-- [The Dilbert Principle](#the-dilbert-principle)
-- [Putt's Law](#putts-law)
-
-### The Robustness Principle (Postel's Law)
-
-[The Robustness Principle on Wikipedia](https://en.wikipedia.org/wiki/Robustness_principle)
-
-> Be conservative in what you do, be liberal in what you accept from others.
-
-Often applied in server application development, this principle states that what you send to others should be as minimal and conformant as possible, but you should aim to allow non-conformant input if it can be processed.
-
-The goal of this principle is to build systems which are robust, as they can handle poorly formed input if the intent can still be understood. However, there are potentially security implications of accepting malformed input, particularly if the processing of such input is not well tested. These implications and other issues are described by Eric Allman in [The Robustness Principle Reconsidered](https://queue.acm.org/detail.cfm?id=1999945).
-
-Allowing non-conformant input, in time, may undermine the ability of protocols to evolve as implementors will eventually rely on this liberality to build their features.
 
 Xem thêm:
 
-- [Hyrum's Law](#hyrums-law-the-law-of-implicit-interfaces)
+- [Nguyên tắc Pareto](#the-pareto-principle-the-8020-rule)
+
+### Nguyên tắc Peter
+
+[Nguyên tắc Peter trên Wikipedia](https://en.wikipedia.org/wiki/Peter_principle)
+
+> Những người trong một công ty có xu hướng nâng cao đến "mức độ kém cỏi" của họ.
+>
+> *Laurence J. Peter*
+
+Một khái niệm quản lý được phát triển bởi Laurence J. Peter, Nguyên tắc Peter quan sát rằng những người làm tốt công việc của họ được thăng chức, cho đến khi họ đạt đến mức độ mà họ không còn thành công nữa ("mức độ kém cỏi" của họ). Tại thời điểm này, khi họ cao cấp hơn, họ ít có khả năng bị loại khỏi tổ chức hơn (trừ khi làm quá sai) và sẽ tiếp tục ở một vai trò mà họ có ít kỹ năng nội lực, như những kỹ năng ngày đầu đã tạo ra họ thành công, những kỹ năng cũ này không nhất thiết phải có cho công việc mới của họ.
+
+Điều này đặc biệt quan tâm đến các kỹ sư - những người ban đầu bắt đầu với vai trò kỹ thuật sâu sắc, nhưng thường có con đường sự nghiệp dẫn đến *quản lý* các kỹ sư khác - đòi hỏi một bộ kỹ năng cơ bản khác.
+
+Xem thêm:
+
+- [Nguyên tắc Dilbert](#the-dilbert-principle)
+- [Định luật Putt](#putts-law)
+
+### Nguyên tắc mạnh mẽ (Định luật Postel)
+
+[Nguyên tắc Vững Chắc trên Wikipedia](https://en.wikipedia.org/wiki/Robustness_principle)
+
+> Bảo thủ trong những gì bạn làm, tự do trong những gì bạn chấp nhận từ người khác.
+
+Thường được áp dụng trong phần mềm Ứng Dụng Máy Chủ, nguyên tắc này nói rằng những gì bạn trả về cho Đầu Vào phải tối thiểu và phù hợp nhất có thể, nhưng Ứng Dụng Máy Chủ có thể xử lý được các Đầu Vào không đúng định dạng.
+
+Mục tiêu của nguyên tắc này là xây dựng các hệ thống mạnh mẽ, vì chúng có thể xử lý Lời Gọi kém. Tuy nhiên, cân nhắc những tác động tiềm ẩn về bảo mật của việc chấp nhận đầu vào không đúng định dạng, đặc biệt nếu quá trình xử lý đầu vào đó không được kiểm tra tốt. Những tác động này và các vấn đề khác được Eric Allman mô tả trong [Nguyên tắc Vững Chắc được xem xét lại](https://queue.acm.org/detail.cfm?id=1999945) .
+
+Việc cho phép Đầu Vào không tuân thủ theo thời gian có thể làm suy yếu khả năng phát triển vì những người triển khai cuối cùng sẽ dựa vào tính tự do này để xây dựng các tính năng của chúng.
+
+Xem thêm:
+
+- [Định luật Hyrum](#hyrums-law-the-law-of-implicit-interfaces)
 
 ### CỨNG
 
-This is an acronym, which refers to:
+Đây là một từ viết tắt, dùng để chỉ:
 
-- S: [The Single Responsibility Principle](#the-single-responsibility-principle)
-- O: [The Open/Closed Principle](#the-openclosed-principle)
-- L: [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-- I: [The Interface Segregation Principle](#the-interface-segregation-principle)
-- D: [The Dependency Inversion Principle](#the-dependency-inversion-principle)
+- S: [The Single Responsibility Principle - Nguyên tắc Đúng Một Trách nhiệm](#the-single-responsibility-principle)
+- O: [The Open/Closed Principle - Nguyên tắc Mở / Đóng](#the-openclosed-principle)
+- L: [The Liskov Substitution Principle - Nguyên tắc thay thế Liskov ](#the-liskov-substitution-principle)
+- I: [The Interface Segregation Principle - Nguyên tắc phân tách giao diện](#the-interface-segregation-principle)
+- D: [The Dependency Inversion Principle - Nguyên tắc đảo ngược phụ thuộc](#the-dependency-inversion-principle)
 
-These are key principles in [Object-Oriented Programming](#todo). Design principles such as these should be able to aid developers build more maintainable systems.
+Đây là những nguyên tắc chính trong [Lập trình hướng đối tượng](#todo) . Các nguyên tắc thiết kế như vậy sẽ có thể hỗ trợ các nhà phát triển xây dựng các hệ thống dễ bảo trì hơn.
 
-### The Single Responsibility Principle
+### Nguyên tắc Đúng Một Trách Nhiệm
 
-[The Single Responsibility Principle on Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+[Nguyên tắc  Đúng Một Trách Nhiệm trên Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
 
-> Every module or class should have a single responsibility only.
+> Mỗi mô-đun hoặc lớp chỉ nên có một trách nhiệm duy nhất và trách nhiệm này chỉ do mô-đun hoặc lớp đó thực hiện.
 
-The first of the '[SOLID](#solid)' principles. This principle suggests that modules or classes should do one thing and one thing only. In more practical terms, this means that a single, small change to a feature of a program should require a change in one component only. For example, changing how a password is validated for complexity should require a change in only one part of the program.
+Nguyên tắc đầu tiên trong số các nguyên tắc ' [SOLID'.](#solid) Nguyên tắc này gợi ý rằng các mô-đun hoặc lớp chỉ nên làm một việc và một việc duy nhất và ngược lại trách nhiệm này chỉ do mô-đun hoặc lớp đó thực hiện.. Nói một cách thực tế hơn, điều này có nghĩa là một thay đổi nhỏ, đơn lẻ đối với một tính năng của chương trình sẽ chỉ yêu cầu một sự thay đổi trong một thành phần. Ví dụ: việc thay đổi cách mật khẩu được xác thực về độ phức tạp sẽ chỉ yêu cầu thay đổi một phần của chương trình.
 
-Theoretically, this should make the code more robust, and easier to change. Knowing that a component which is being changed has a single responsibility only means that *testing* that change should be easier. Using the earlier example, changing the password complexity component should only be able to affect the features which relate to password complexity. It can be much more difficult to reason about the impact of a change to a component which has many responsibilities.
+Về mặt lý thuyết, điều này sẽ làm cho mã mạnh hơn và dễ thay đổi hơn. Biết rằng một thành phần đang được thay đổi chỉ có một trách nhiệm duy nhất có nghĩa là việc *kiểm tra* sự thay đổi đó sẽ dễ dàng hơn. Sử dụng ví dụ trước đó, việc thay đổi thành phần độ phức tạp của mật khẩu chỉ có thể ảnh hưởng đến các tính năng liên quan đến độ phức tạp của mật khẩu. Có thể khó hơn nhiều để lập luận về tác động của một thay đổi đối với một thành phần có nhiều trách nhiệm.
 
-See also:
-
-- [Lập trình hướng đối tượng](#todo)
-- [CỨNG](#solid)
-
-### The Open/Closed Principle
-
-[The Open/Closed Principle on Wikipedia](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
-
-> Entities should be open for extension and closed for modification.
-
-The second of the '[SOLID](#solid)' principles. This principle states that entities (which could be classes, modules, functions and so on) should be able to have their behaviour *extended*, but that their *existing* behaviour should not be able to be modified.
-
-As a hypothetical example, imagine a module which is able to turn a Markdown document into HTML. Now imagine there is a new syntax added to the Markdown specification, which adds support for mathematical equations. The module should be *open to extension* to implement the new mathematics syntax. However, existing syntax implementations (like paragraphs, bullets, etc) should be *closed for modification*. They already work, we don't want people to change them.
-
-This principle has particular relevance for object-oriented programming, where we may design objects to be easily extended, but would avoid designing objects which can have their existing behaviour changed in unexpected ways.
-
-See also:
-
-- [Object-Oriented Programming](#todo)
-- [CỨNG](#solid)
-
-### The Liskov Substitution Principle
-
-[The Liskov Substitution Principle on Wikipedia](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
-
-> It should be possible to replace a type with a subtype, without breaking the system.
-
-The third of the '[SOLID](#solid)' principles. This principle states that if a component relies on a type, then it should be able to use subtypes of that type, without the system failing or having to know the details of what that subtype is.
-
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. If the method uses a base type 'file', then anything which derives from 'file' should be able to be used in the function. If 'file' supports seeking in reverse, and the XML parser uses that function, but the derived type 'network file' fails when reverse seeking is attempted, then the 'network file' would be violating the principle.
-
-This principle has particular relevance for object-oriented programming, where type hierarchies must be modeled carefully to avoid confusing users of a system.
-
-See also:
+Xem thêm:
 
 - [Lập trình hướng đối tượng](#todo)
 - [CỨNG](#solid)
 
-### The Interface Segregation Principle
+### Nguyên tắc Mở / Đóng
+
+[Nguyên tắc Mở / Đóng trên Wikipedia](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
+
+> Các Thực Thể phần mềm phải thiết kế sao cho dễ dàng để thêm mới và khó khăn cho sửa đổi.
+
+Nguyên tắc thứ hai của nguyên tắc ' [SOLID'.](#solid) Nguyên tắc này nói rằng các Thực Thể (có thể là lớp, mô-đun, chức năng, v.v.) sẽ có thể dễ dàng *mở rộng*, nhưng *hành vi hiện tại* của chúng sẽ chắc chắn, khó bị thay đổi. Nên khi thay đổi, ta chỉ cần thêm cái mới mà không sửa cái cũ.
+
+Như một ví dụ giả định, hãy tưởng tượng một mô-đun có thể chuyển tài liệu Markdown thành HTML. Bây giờ hãy tưởng tượng có một cú pháp mới được thêm vào đặc tả Markdown, bổ sung hỗ trợ cho các phương trình toán học. Mô-đun nên được *mở để mở rộng* để triển khai cú pháp toán học mới. Tuy nhiên, các triển khai cú pháp hiện có (như đoạn văn, dấu đầu dòng, v.v.) nên được *đóng lại để sửa đổi* . Chúng đã hoạt động, chúng tôi không muốn mọi người thay đổi chúng.
+
+Nguyên tắc này có liên quan đặc biệt đối với lập trình hướng đối tượng, nơi chúng ta có thể thiết kế các đối tượng để dễ dàng mở rộng, nhưng sẽ tránh thiết kế các đối tượng có thể làm thay đổi hành vi hiện tại của chúng theo những cách không mong muốn.
+
+Xem thêm:
+
+- [Lập trình hướng đối tượng](#todo)
+- [CỨNG](#solid)
+
+### Nguyên tắc thay thế Liskov
+
+[Nguyên tắc thay thế Liskov trên Wikipedia](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
+
+> Chương trình thiết kế để có thể thay thế một lớp bằng một lớp con mở rộng của lớp đó mà không làm hỏng chương trình.
+
+Nguyên tắc thứ ba của nguyên tắc ' [SOLID'.](#solid) Nguyên tắc này nói rằng nếu một thành phần phụ thuộc vào một kiểu, thì nó sẽ có thể sử dụng các kiểu con của kiểu đó mà hệ thống không bị lỗi hoặc phải biết chi tiết về kiểu con đó là gì.
+
+Ví dụ, hãy tưởng tượng chúng ta có một phương thức đọc tài liệu XML từ một cấu trúc đại diện cho một tệp. Nếu phương thức sử dụng loại cơ sở là 'tệp', thì bất kỳ thứ gì bắt nguồn từ 'tệp' sẽ có thể được sử dụng trong hàm. Nếu 'tệp' hỗ trợ tìm kiếm ngược lại và trình phân tích cú pháp XML sử dụng chức năng đó, nhưng loại dẫn xuất 'tệp mạng' không thành công khi tìm kiếm ngược lại, thì 'tệp mạng' sẽ vi phạm nguyên tắc.
+
+Nguyên tắc này có liên quan đặc biệt đối với lập trình hướng đối tượng, trong đó phân cấp kiểu phải được mô hình hóa cẩn thận để tránh gây nhầm lẫn cho người dùng hệ thống.
+
+Xem thêm:
+
+- [Lập trình hướng đối tượng](#todo)
+- [CỨNG](#solid)
+
+### Nguyên tắc phân tách giao diện
 
 [Nguyên tắc phân tách giao diện trên Wikipedia](https://en.wikipedia.org/wiki/Interface_segregation_principle)
 
-> No client should be forced to depend on methods it does not use.
+> Không một Ứng Dụng Khách nào buộc phải phụ thuộc vào các Phương Thức mà nó không sử dụng.
 
-The fourth of the '[SOLID](#solid)' principles. This principle states that consumers of a component should not depend on functions of that component which it doesn't actually use.
+Nguyên tắc thứ tư của nguyên tắc ' [SOLID'.](#solid) Nguyên tắc này nói rằng Ứng Dụng Khách không nên phụ thuộc vào các chức năng của thành phần đó mà nó không thực sự sử dụng.
 
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. It only needs to read bytes, move forwards or move backwards in the file. If this method needs to be updated because an unrelated feature of the file structure changes (such as an update to the permissions model used to represent file security), then the principle has been invalidated. It would be better for the file to implement a 'seekable-stream' interface, and for the XML reader to use that.
+Ví dụ, hãy tưởng tượng chúng ta có một phương thức đọc tài liệu XML từ một cấu trúc đại diện cho một tệp. Nó chỉ cần đọc byte, chuyển tới hoặc lùi trong tệp. Nếu phương pháp này cần được cập nhật vì một tính năng không liên quan của cấu trúc tệp thay đổi (chẳng hạn như bản cập nhật cho mô hình quyền được sử dụng để đại diện cho bảo mật tệp), thì nguyên tắc đó đã bị vô hiệu. Tệp sẽ tốt hơn nếu triển khai giao diện 'luồng có thể tìm kiếm' và trình đọc XML sử dụng giao diện đó.
 
-This principle has particular relevance for object-oriented programming, where interfaces, hierarchies and abstract types are used to [minimise the coupling](#todo) between different components. [Duck typing](#todo) is a methodology which enforces this principle by eliminating explicit interfaces.
+Nguyên tắc này có liên quan đặc biệt đối với lập trình hướng đối tượng, trong đó các giao diện, cấu trúc phân cấp và các kiểu trừu tượng được sử dụng để [giảm thiểu sự ghép nối](#todo) giữa các thành phần khác nhau. [Kiểu Duck](#todo) là một phương pháp thực thi nguyên tắc này bằng cách loại bỏ các giao diện rõ ràng.
 
-See also:
+Xem thêm:
 
-- [Object-Oriented Programming](#todo)
+- [Lập trình hướng đối tượng](#todo)
 - [CỨNG](#solid)
 - [Vịt gõ](#todo)
 - [Tách rời](#todo)
 
-### The Dependency Inversion Principle
+### Nguyên tắc đảo ngược phụ thuộc
 
-[The Dependency Inversion Principle on Wikipedia](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
+[Nguyên tắc đảo ngược phụ thuộc trên Wikipedia](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
 
-> High-level modules should not be dependent on low-level implementations.
+> Các mô-đun mức phác thảo không bị phụ thuộc vào các triển khai cụ thể.
 
-The fifth of the '[SOLID](#solid)' principles. This principle states that higher level orchestrating components should not have to know the details of their dependencies.
+Nguyên tắc thứ năm của nguyên tắc ' [SOLID'.](#solid) Nguyên tắc này nói rằng các thành phần thiết kế mức cao - trừu tượng, không cần phải biết cụ thể các thành phần mà chúng phụ thuộc.
 
-As an example, imagine we have a program which read metadata from a website. We would assume that the main component would have to know about a component to download the webpage content, then a component which can read the metadata. If we were to take dependency inversion into account, the main component would depend only on an abstract component which can fetch byte data, and then an abstract component which would be able to read metadata from a byte stream. The main component would not know about TCP/IP, HTTP, HTML, etc.
+Ví dụ, hãy tưởng tượng chúng ta có một chương trình đọc dữ liệu từ một trang web. Chúng tôi giả định rằng thành phần chính sẽ phải biết về một thành phần tải xuống nội dung trang web, sau đó là một thành phần có thể đọc siêu dữ liệu. Nếu nhìn theo Nghịch Đảo Phụ Thuộc, thì thành phần chính [1] sẽ nhìn  vào một thành phần trừu tượng có thể "nạp dữ liệu" [2], và [2] sẽ nhìn vào một thành phần trừu tượng khác có thể "đọc siêu dữ liệu từ một luồng byte". Thành phần chính [1] sẽ không biết về TCP / IP, HTTP, HTML, v.v.
 
-This principle is complex, as it can seem to 'invert' the expected dependencies of a system (hence the name). In practice, it also means that a separate orchestrating component must ensure the correct implementations of abstract types are used (e.g. in the previous example, *something* must still provide the metadata reader component a HTTP file downloader and HTML meta tag reader). This then touches on patterns such as [Inversion of Control](#todo) and [Dependency Injection](#todo).
+Nguyên tắc này rất phức tạp, vì nó dường như có thể 'đảo ngược' các phần phụ thuộc mong đợi của một hệ thống (do đó có tên như vậy). Trong thực tế, điều đó cũng có nghĩa là một thành phần điều phối riêng biệt phải đảm bảo việc triển khai chính xác các kiểu trừu tượng được sử dụng (ví dụ: trong ví dụ trước, *một cái gì đó* vẫn phải cung cấp cho thành phần trình đọc siêu dữ liệu một trình tải xuống tệp HTTP và trình đọc thẻ meta HTML). Sau đó, điều này chạm vào các mẫu như [Inversion of Control](#todo) và [Dependency Injection](#todo) .
 
-See also:
+Xem thêm:
 
-- [Object-Oriented Programming](#todo)
+- [Lập trình hướng đối tượng](#todo)
 - [CỨNG](#solid)
 - [Đảo ngược kiểm soát](#todo)
 - [Tiêm phụ thuộc](#todo)
 
-### The DRY Principle
+### Nguyên tắc DRY
 
-[The DRY Principle on Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+[Nguyên tắc DRY trên Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+> Mỗi phần kiến thức phải có một đại diện duy nhất, rõ ràng, có thẩm quyền trong một hệ thống.
 
-DRY is an acronym for *Don't Repeat Yourself*. This principle aims to help developers reducing the repetition of code and keep the information in a single place and was cited in 1999 by Andrew Hunt and Dave Thomas in the book [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+DRY là từ viết tắt của *Don't Repeat Yourself* . Nguyên tắc này nhằm mục đích giúp các nhà phát triển giảm thiểu việc lặp lại mã và giữ thông tin ở một nơi duy nhất và được trích dẫn vào năm 1999 bởi Andrew Hunt và Dave Thomas trong cuốn sách [Nhà phát triển thực dụng.](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
-> The opposite of DRY would be *WET* (Write Everything Twice or We Enjoy Typing).
+> Ngược lại với DRY sẽ là *WET* (Viết mọi thứ hai lần hoặc mỉa mai là Chúng tôi thích đánh máy).
 
-In practice, if you have the same piece of information in two (or more) different places, you can use DRY to merge them into a single one and reuse it wherever you want/need.
+Trên thực tế, nếu bạn có cùng một phần thông tin ở hai (hoặc nhiều) nơi khác nhau, bạn có thể sử dụng DRY để hợp nhất chúng thành một thông tin duy nhất và sử dụng lại bất cứ nơi nào bạn muốn / cần.
 
 Xem thêm:
 
 - [Nhà phát triển thực dụng](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
-### The KISS principle
+### Nguyên tắc KISS
 
-[KISS on Wikipedia](https://en.wikipedia.org/wiki/KISS_principle)
+[KISS trên Wikipedia](https://en.wikipedia.org/wiki/KISS_principle)
 
-> Keep it simple, stupid
+> Giữ cho nó thật đơn giản, ngu ngốc
 
-The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore, simplicity should be a key goal in design, and unnecessary complexity should be avoided.  Originating in the U.S. Navy in 1960, the phrase has been associated with aircraft engineer Kelly Johnson.
+Nguyên tắc KISS nói rằng hầu hết các hệ thống hoạt động tốt nhất nếu chúng được giữ đơn giản thay vì phức tạp; do đó, sự đơn giản nên là mục tiêu chính trong thiết kế và nên tránh sự phức tạp không cần thiết. Bắt nguồn từ Hải quân Hoa Kỳ vào năm 1960, cụm từ này đã được gắn liền với kỹ sư máy bay Kelly Johnson.
 
-The principle is best exemplified by the story of Johnson handing a team of design engineers a handful of tools, with the challenge that the jet aircraft they were designing must be repairable by an average mechanic in the field under combat conditions with only these tools. Hence, the "stupid" refers to the relationship between the way things break and the sophistication of the tools available to repair them, not the capabilities of the engineers themselves.
+Nguyên tắc này được thể hiện rõ nhất qua câu chuyện về việc Johnson giao cho một nhóm kỹ sư thiết kế một số công cụ, với thách thức rằng chiếc máy bay phản lực mà họ đang thiết kế phải được sửa chữa bởi một thợ cơ khí trung bình trong điều kiện chiến đấu chỉ với những công cụ này. Do đó, "ngu ngốc" đề cập đến mối quan hệ giữa cách mọi thứ bị hỏng và sự tinh vi của các công cụ có sẵn để sửa chữa chúng, chứ không phải khả năng của chính các kỹ sư.
 
-See also:
+Xem thêm:
 
 - [Luật Gall](#galls-law)
 
 ### YAGNI
 
-[YAGNI on Wikipedia](https://en.wikipedia.org/wiki/You_ain%27t_gonna_need_it)
+[YAGNI trên Wikipedia](https://en.wikipedia.org/wiki/You_ain%27t_gonna_need_it)
 
-This is an acronym for ***Y**ou **A**in't **G**onna **N**eed **I**t*.
+Đây là từ viết tắt của ***Y**ou **A**in't **G**onna **N**eed **I**t* .
 
-> Always implement things when you actually need them, never when you just foresee that you need them.
+> Chỉ làm khi bạn thực sự cần, không bao giờ làm khi bạn nghĩ rằng bạn cần chúng.
 >
 > ( [Ron Jeffries](https://twitter.com/RonJeffries) ) (Đồng sáng lập XP và tác giả của cuốn sách "Cài đặt lập trình cực đoan")
 
-This *Extreme Programming* (XP) principle suggests developers should only implement functionality that is needed for the immediate requirements, and avoid attempts to predict the future by implementing functionality that might be needed later.
+*Nguyên tắc Lập trình Cực đoan* (XP) này đề xuất các nhà phát triển chỉ nên triển khai chức năng cần thiết cho các yêu cầu trước mắt và tránh các nỗ lực dự đoán tương lai bằng cách triển khai chức năng có thể cần thiết sau này.
 
-Adhering to this principle should reduce the amount of unused code in the codebase, and avoid time and effort being wasted on functionality that brings no value.
+Tuân thủ nguyên tắc này sẽ giảm số lượng mã không sử dụng trong cơ sở mã và tránh lãng phí thời gian và công sức vào chức năng không mang lại giá trị.
 
-See also:
+Xem thêm:
 
 - [Danh sách đọc: Lập trình cực đoan đã được cài đặt](#reading-list)
 
-### The Fallacies of Distributed Computing
+### Sự sụp đổ của máy tính phân tán
 
-[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+[Sự sụp đổ của máy tính phân tán trên Wikipedia](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
-Also known as *Fallacies of Networked Computing*, the Fallacies are a list of conjectures (or beliefs) about distributed computing, which can lead to failures in software development. The assumptions are:
+Còn được gọi là Các lỗi *của Máy tính Nối mạng* , Các Sai lầm là một danh sách các phỏng đoán (hoặc niềm tin) về máy tính phân tán, có thể dẫn đến thất bại trong quá trình phát triển phần mềm. Các giả định là:
 
-- The network is reliable
-- Latency is zero
-- Bandwidth is infinite
-- The network is secure
-- Topology doesn't change
-- There is one administrator
-- Transport cost is zero
-- The network is homogeneous
+- Mạng đáng tin cậy
+- Độ trễ bằng 0
+- Băng thông là vô hạn
+- Mạng an toàn
+- Cấu trúc liên kết không thay đổi
+- Có một quản trị viên
+- Chi phí vận chuyển bằng 0
+- Mạng đồng nhất
 
-The first four items were listed by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) and [Tom Lyon](https://twitter.com/aka_pugs) around 1991 and first classified by [James Gosling](https://en.wikipedia.org/wiki/James_Gosling) as the "Fallacies of Networked Computing". [L. Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) added the 5th, 6th and 7th fallacies. In the late 90's Gosling added the 8th fallacy.
+Bốn mục đầu tiên đã được liệt kê bởi [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) và [Tom Lyon](https://twitter.com/aka_pugs) vào khoảng năm 1991 và lần đầu tiên được [James Gosling](https://en.wikipedia.org/wiki/James_Gosling) xếp vào danh sách "Các di sản của Máy tính nối mạng". [L. Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) đã thêm vào các ngụy biện thứ 5, 6 và 7. Vào cuối những năm 90, Gosling đã thêm vào sự nguỵ biện thứ 8.
 
-The group was inspired by what was happening at the time inside [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems).
+Nhóm được truyền cảm hứng từ những gì đang xảy ra tại thời điểm đó bên trong [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems) .
 
-These fallacies should be considered carefully when designing code which is resilient; assuming any of these fallacies can lead to flawed logic which fails to deal with the realities and complexities of distributed systems.
+Những ngụy biện này cần được xem xét cẩn thận khi thiết kế mã có khả năng phục hồi; giả sử bất kỳ lỗi ngụy biện nào trong số này có thể dẫn đến logic sai sót không giải quyết được các thực tế và sự phức tạp của hệ thống phân tán.
 
-See also:
+Xem thêm:
 
 - [Tìm kiếm sự sụp đổ của máy tính phân tán (Phần 1) - Vaidehi Joshi trên phương tiện](https://medium.com/baseds/foraging-for-the-fallacies-of-distributed-computing-part-1-1b35c3b85b53)
 
-## Reading List
+## Danh sách đọc
 
-If you have found these concepts interesting, you may enjoy the following books.
+Nếu bạn thấy những khái niệm này thú vị, bạn có thể thưởng thức những cuốn sách sau đây.
 
 - [Mã sạch - Robert C. Martin](https://www.goodreads.com/book/show/3735293-clean-code) - Một trong những cuốn sách được đánh giá cao nhất về cách viết mã sạch, có thể bảo trì.
 - [Cài đặt Lập trình Cực đoan - Ron Jeffries, Ann Anderson, Chet Hendrikson](https://www.goodreads.com/en/book/show/67834) - Trình bày các nguyên tắc cốt lõi của Lập trình Cực đoan.
@@ -999,27 +997,27 @@ If you have found these concepts interesting, you may enjoy the following books.
 - [The Mythical Man Month - Frederick P. Brooks Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - Một bộ sách kinh điển về kỹ thuật phần mềm. [Luật của Brooks](#brooks-law) là chủ đề trung tâm của cuốn sách.
 - [Nguyên tắc Peter - Lawrence J. Peter](https://www.goodreads.com/book/show/890728.The_Peter_Principle) - Một truyện tranh khác về những thách thức của các tổ chức lớn hơn và quản lý con người, nguồn gốc của [Nguyên tắc Peter](#the-peter-principle) .
 
-## Online Resources
+## Những nguồn thông tin trên mạng
 
-Some useful resources and reading.
+Một số tài nguyên hữu ích và đọc.
 
 - [CB Insights: 8 quy luật thúc đẩy thành công trong lĩnh vực công nghệ: Quy tắc 2 chiếc bánh Pizza của Amazon, Nguyên tắc 80/20, &amp; hơn thế nữa](https://www.cbinsights.com/research/report/tech-laws-success-failure) - một bản viết thú vị về một số quy luật có ảnh hưởng lớn trong lĩnh vực công nghệ.
 
-## PDF eBook
+## Sách điện tử PDF
 
-The project is available as a PDF eBook, [download the latest PDF eBook with this link](https://github.com/dwmkerr/hacker-laws/releases/latest/download/hacker-laws.pdf) or check the [release](https://github.com/dwmkerr/hacker-laws/releases) page for older versions.
+Dự án có sẵn dưới dạng sách điện tử PDF, hãy [tải xuống sách điện tử PDF mới nhất bằng liên kết này](https://github.com/dwmkerr/hacker-laws/releases/latest/download/hacker-laws.pdf) hoặc kiểm tra [trang phát hành](https://github.com/dwmkerr/hacker-laws/releases) để biết các phiên bản cũ hơn.
 
-A new version of the eBook is created automatically when a new version tag is pushed.
+Phiên bản sách điện tử mới được tạo tự động khi thẻ phiên bản mới được đẩy.
 
-## Podcast
+## Tệp âm thanh
 
-Hacker Laws has been featured in [The Changelog](https://changelog.com/podcast/403), you can check out the Podcast episode with the link below:
+Luật Hacker đã được giới thiệu trong [The Changelog](https://changelog.com/podcast/403) , bạn có thể xem tập Podcast bằng liên kết bên dưới:
 
 <a href="https://changelog.com/podcast/403" target="_blank"></a>
 
 ## Bản dịch
 
-Thanks to a number of wonderful contributors, Hacker Laws is available in a number of languages. Please consider sponsoring moderators!
+Nhờ một số cộng tác viên tuyệt vời, Luật Hacker có sẵn ở một số ngôn ngữ. Vui lòng xem xét tài trợ cho người điều hành!
 
 Ngôn ngữ | Người điều hành | Trạng thái
 --- | --- | ---
@@ -1038,22 +1036,22 @@ Ngôn ngữ | Người điều hành | Trạng thái
 [🇹🇷 Türkçe / tiếng Thổ Nhĩ Kỳ](https://github.com/umutphp/hacker-laws-tr) | [Umut Işık](https://github.com/umutphp) | [](https://gitlocalize.com/repo/2513/tr?utm_source=badge)
 [🇺🇦 українська мова / tiếng Ukraina](./translations/uk.md) | [Nazar](https://github.com/troyane) , [Helga Lastivka](https://github.com/HelgaLastivka) | [](https://gitlocalize.com/repo/2513/uk?utm_source=badge)
 
-If you would like to update a translation, just [open a pull request](https://github.com/dwmkerr/hacker-laws/pulls). If you want to add a new language, log onto [GitLocalize](https://gitlocalize.com/) to create an account, then open an issue asking to administer the language and I will add you to the project! It would also be super helpful if you can open a pull request which updates the table above and link at the top of the file.
+Nếu bạn muốn cập nhật bản dịch, chỉ cần [mở một yêu cầu kéo](https://github.com/dwmkerr/hacker-laws/pulls) . Nếu bạn muốn thêm ngôn ngữ mới, hãy đăng nhập vào [GitLocalize](https://gitlocalize.com/) để tạo tài khoản, sau đó mở một vấn đề yêu cầu quản lý ngôn ngữ và tôi sẽ thêm bạn vào dự án! Nó cũng sẽ rất hữu ích nếu bạn có thể mở một yêu cầu kéo để cập nhật bảng ở trên và liên kết ở đầu tệp.
 
-## Related Projects
+## Các dự án liên quan
 
-- [Tip of the Day](https://tips.darekkay.com/html/hacker-laws-en.html) - Receive a daily hacker law/principle.
-- [Hacker Laws CLI](https://github.com/umutphp/hacker-laws-cli) - List, view and see random laws from the terminal!
-- [Hacker Laws Action](https://github.com/marketplace/actions/hacker-laws-action) - Adds a random Hacker Law to a pull request as a small gift for the contributor, thanks [Umut Işık](https://github.com/umutphp)
+- [Mẹo trong ngày](https://tips.darekkay.com/html/hacker-laws-en.html) - Nhận luật / nguyên tắc của hacker hàng ngày.
+- [Luật Hacker CLI](https://github.com/umutphp/hacker-laws-cli) - Liệt kê, xem và xem các luật ngẫu nhiên từ thiết bị đầu cuối!
+- [Hành động của Luật Hacker](https://github.com/marketplace/actions/hacker-laws-action) - Thêm Luật Hacker ngẫu nhiên vào một yêu cầu kéo như một món quà nhỏ cho người đóng góp, cảm ơn [Umut Işık](https://github.com/umutphp)
 
-## Contributing
+## Đóng góp
 
-Please do contribute! [Raise an issue](https://github.com/dwmkerr/hacker-laws/issues/new) if you'd like to suggest an addition or change, or [Open a pull request](https://github.com/dwmkerr/hacker-laws/compare) to propose your own changes.
+Hãy đóng góp! [Nêu vấn đề](https://github.com/dwmkerr/hacker-laws/issues/new) nếu bạn muốn đề xuất bổ sung hoặc thay đổi hoặc [Mở yêu cầu kéo](https://github.com/dwmkerr/hacker-laws/compare) để đề xuất các thay đổi của riêng bạn.
 
-Please be sure to read the [Contributing Guidelines](./.github/contributing.md) for requirements on text, style and so on. Please be aware of the [Code of Conduct](./.github/CODE_OF_CONDUCT.md) when engaging in discussions on the project.
+Hãy nhớ đọc [Nguyên tắc đóng góp](./.github/contributing.md) để biết các yêu cầu về văn bản, văn phong, v.v. Vui lòng lưu ý [Quy tắc Ứng xử](./.github/CODE_OF_CONDUCT.md) khi tham gia vào các cuộc thảo luận về dự án.
 
-## TODO
+## SẼ LÀM
 
-Hi! If you land here, you've clicked on a link to a topic I've not written up yet, sorry about this - this is work in progress!
+Chào! Nếu bạn đến đây, bạn đã nhấp vào một liên kết đến một chủ đề mà tôi chưa viết lên, xin lỗi về điều này - đây là công việc đang được tiến hành!
 
-Feel free to [Raise an Issue](https://github.com/dwmkerr/hacker-laws/issues) requesting more details, or [Open a Pull Request](https://github.com/dwmkerr/hacker-laws/pulls) to submit your proposed definition of the topic.
+Vui lòng nêu [vấn đề](https://github.com/dwmkerr/hacker-laws/issues) yêu cầu thêm chi tiết hoặc [Mở yêu cầu kéo](https://github.com/dwmkerr/hacker-laws/pulls) để gửi định nghĩa đề xuất của bạn về chủ đề.
