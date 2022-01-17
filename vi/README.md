@@ -114,6 +114,7 @@ Minh họa tốt nhất với một ví dụ. Nếu một chương trình có ha
 
 Sơ đồ dưới đây cho thấy một số ví dụ về những cải tiến tiềm năng về tốc độ:
 
+
 <img width="480px" src="./images/amdahls_law.png" alt="Diagram: Amdahl's Law">
 
 *(Tham khảo hình ảnh: Bởi Daniels219 tại Wikipedia tiếng Anh, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
@@ -244,6 +245,7 @@ Ví dụ trong thế giới thực:
 
 Định luật Fitts dự đoán rằng thời gian cần thiết để di chuyển đến một khu vực mục tiêu là một hàm của khoảng cách đến mục tiêu chia cho chiều rộng của mục tiêu.
 
+
 <img width="300px" src="./images/Fitts_Law.svg" alt="Diagram: Fitts Law">
 
 *(Tham khảo hình ảnh: Bởi Foobar628 tại Wikipedia tiếng Anh, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/Fitts%27s_law#/media/File:Fitts_Law.svg)*
@@ -276,7 +278,7 @@ Xem thêm:
 
 [Định luật Goodhart trên Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
 
-> Mọi thống kê đều đặn quan sát được sẽ có xu hướng sụp đổ khi chịu áp lực đặt lên nó với mục đích kiểm soát.
+> Mọi hệ thống có xu hướng sụp đổ khi chịu áp lực thống kê quan sát  với mục đích kiểm soát đặt lên nó
 >
 > *Charles Goodhart*
 
@@ -302,7 +304,7 @@ Xem thêm:
 
 [Hanlon Razor trên Wikipedia](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
 
-> Kết quả xấu không thể giải thích được bằng sự thực hiện ác, mà bằng sự ngu dốt
+> Kết quả xấu không thể giải thích được bằng ác ý, mà bằng sự ngu dốt
 >
 > Robert J. Hanlon
 
@@ -647,6 +649,7 @@ Các thành viên của tổ chức đã mô tả rằng ý nghĩa thực tế c
 Quy tắc này cho thấy rằng bất kể quy mô của công ty, các đội nên đủ nhỏ để có thể ăn hai chiếc pizza. Được gán cho Jeff Bezos và Amazon, niềm tin này cho thấy rằng các đội lớn vốn đã kém hiệu quả. Điều này được hỗ trợ bởi thực tế là khi quy mô nhóm tăng tuyến tính, liên kết giữa mọi người sẽ tăng theo bậc hai; do đó chi phí phối hợp và giao tiếp cũng tăng theo bậc hai. Nếu chi phí phối hợp này về cơ bản là tổng chi phí, thì các nhóm nhỏ hơn nên được ưu tiên hơn.
 
 Số lượng liên kết giữa mọi người có thể được biểu thị bằng `n(n-1)/2` trong đó n = số người.
+
 
 <img width="200px" alt="Đồ thị hoàn chỉnh; Liên kết giữa mọi người" src="./images/complete_graph.png">
 
