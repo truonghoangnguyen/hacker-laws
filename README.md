@@ -1,5 +1,5 @@
 # Bản dịch hacker-laws ra tiếng việt
-Những nguyên lý, định luật có tính phổ quát cao mà bạn có thể sử dụng trong tán gái, lập trình, làm ăn... đến ngay cả quá trình suy nghĩ hàng ngày
+Những nguyên lý, định luật có tính phổ quát cao mà bạn có thể sử dụng trong tán gái, lập trình, làm ăn... đến ngay cả quá trình suy nghĩ hàng ngày. [Đọc ngay](./vi/README.md)
 
 ## 💻📖 hacker-laws
 
