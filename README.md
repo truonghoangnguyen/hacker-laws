@@ -1,4 +1,7 @@
-# 💻📖 hacker-laws
+# Bản dịch hacker-laws ra tiếng việt
+Những nguyên lý, định luật có tính phổ quát cao mà bạn có thể sử dụng trong tán gái, lập trình, làm ăn... đến ngay cả quá trình suy nghĩ hàng ngày
+
+## 💻📖 hacker-laws
 
 Laws, Theories, Principles and Patterns that developers will find useful.
 
